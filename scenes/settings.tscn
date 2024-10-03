@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwrhsav1b6hkf"]
+
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_r3n6e"]
+
+[node name="Settings" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r3n6e")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="MainMenuBtn" type="Button" parent="MarginContainer"]
+layout_mode = 2
+text = "Back to main menu"
+
+[node name="MasterSoundLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="MasterSoundSlider" type="HSlider" parent="."]
+layout_mode = 2
+max_value = 70.0
+value = 40.0
+
+[node name="MusicSoundLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="MusicSoundSlider" type="HSlider" parent="."]
+layout_mode = 2
+max_value = 70.0
+value = 40.0
+
+[node name="SFXSoundLabel" type="Label" parent="."]
+layout_mode = 2
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="SFXSoundSlider" type="HSlider" parent="."]
+layout_mode = 2
+max_value = 70.0
+value = 40.0
+
+[connection signal="pressed" from="MarginContainer/MainMenuBtn" to="." method="_on_main_menu_btn_pressed"]
