@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var is_paused := false
+@onready var top_map := $TileMapLayer
+@onready var current_cells = top_map.get_used_cells()
 
 func _ready():
 	$CanvasLayer/MenuContainer.hide()
@@ -9,6 +11,16 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("esc"):
 		pause_trigger()
+	if Input.is_action_just_pressed("LeftClick"):
+		var mouse_pos = top_map.local_to_map(get_global_mouse_position())
+		if not current_cells.has(mouse_pos):
+			current_cells.append(mouse_pos)
+			top_map.set_cell(mouse_pos, 1, Vector2i(2, 0), 0)
+	if Input.is_action_just_pressed("RightClick"):
+		var mouse_pos = top_map.local_to_map(get_global_mouse_position())
+		if current_cells.has(mouse_pos):
+			current_cells.erase(mouse_pos)
+			top_map.set_cell(mouse_pos, -1, Vector2i(2, 0), 0)
 
 func pause_trigger():
 	if (is_paused):
@@ -35,3 +47,5 @@ func _on_setting_btn_pressed():
 func _on_settings_exit_settings():
 	$CanvasLayer/MenuContainer.show()
 	$CanvasLayer/Settings.hide()
+	
+	
