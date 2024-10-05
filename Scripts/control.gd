@@ -3,6 +3,7 @@ extends Node2D
 var MasterVolumeModifier
 var MusicVolumeModifier
 var SFXVolumeModifier
+@onready var cards_prototype = $CardsPrototypeContainer
 
 func _ready():
 	pass # Replace with function body.

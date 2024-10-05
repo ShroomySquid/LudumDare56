@@ -12,7 +12,7 @@ extends Node2D
 signal card_activated
 
 var mouse_hover = false
-var id = 0
+var hand_pos = 0
 
 func _ready():
 	pass
@@ -28,8 +28,8 @@ func set_values(_cost, _name, _description):
 	description_lbl.text = description
 	name_lbl.text = card_name
 	
-func set_id(_id):
-	id = _id
+func set_hand_pos(_hand_pos):
+	hand_pos = _hand_pos
 
 func _process(_delta):
 	if mouse_hover && scale.x < 1.1:
@@ -39,7 +39,7 @@ func _process(_delta):
 		await get_tree().create_timer(0.01).timeout
 		scale -= Vector2(0.02, 0.02)
 	if Input.is_action_just_pressed("LeftClick") && mouse_hover:
-		card_activated.emit(id)
+		card_activated.emit(hand_pos)
 		_activate()
 		hide()
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwb6bbcj0ix8o"]
+
+[ext_resource type="Script" path="res://Scripts/card_template.gd" id="1_5wnyy"]
+
+[node name="CardTemplate" type="ResourcePreloader"]
+script = ExtResource("1_5wnyy")

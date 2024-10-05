@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cubm8ayprtkdv"]
+[gd_scene load_steps=8 format=3 uid="uid://cubm8ayprtkdv"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_6a6vw"]
 [ext_resource type="PackedScene" uid="uid://bwrhsav1b6hkf" path="res://scenes/settings.tscn" id="2_2jvls"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="2_47ctw"]
 [ext_resource type="PackedScene" uid="uid://b7wxcfyqsfdki" path="res://scenes/single_lane.tscn" id="3_00exx"]
 [ext_resource type="PackedScene" uid="uid://bbb7x8iedogb0" path="res://scenes/card_hand.tscn" id="4_okrk5"]
+[ext_resource type="PackedScene" uid="uid://cuuphyhhs1jpv" path="res://scenes/deck.tscn" id="5_nkqn3"]
+[ext_resource type="PackedScene" uid="uid://d3xpytexxvo37" path="res://scenes/discard_pile.tscn" id="6_6wirs"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -54,6 +56,12 @@ offset_right = -399.0
 offset_bottom = -185.0
 
 [node name="CardHand" parent="CanvasLayer" instance=ExtResource("4_okrk5")]
+
+[node name="Deck" parent="CanvasLayer" instance=ExtResource("5_nkqn3")]
+position = Vector2(1757, 718)
+
+[node name="DiscardPile" parent="CanvasLayer" instance=ExtResource("6_6wirs")]
+position = Vector2(1758, 839)
 
 [node name="SingleLane" parent="." instance=ExtResource("3_00exx")]
 
