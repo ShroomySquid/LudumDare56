@@ -7,7 +7,7 @@ extends ResourcePreloader
 @export var cost : int
 @export var type := Type.CREATURE
 @export var faction := Faction.GOBELINS
-@export var image: Texture
+@export var texture: Texture
 @export var id: int
 @export var description: String
 

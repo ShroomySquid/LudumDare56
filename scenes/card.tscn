@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://drdtcbypimoey"]
+[gd_scene load_steps=5 format=3 uid="uid://drdtcbypimoey"]
 
 [ext_resource type="Texture2D" uid="uid://cmpbtkqvuxphg" path="res://Images/card_template.png" id="1_e8xn8"]
 [ext_resource type="Script" path="res://Scripts/card.gd" id="1_f4hih"]
+[ext_resource type="Texture2D" uid="uid://xm02xx3q3384" path="res://Images/red.jpeg" id="3_pwuu4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2mrrf"]
 size = Vector2(159, 254)
@@ -16,6 +17,9 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_e8xn8")
 
 [node name="Image" type="Sprite2D" parent="."]
+position = Vector2(2, -45.5)
+scale = Vector2(0.421405, 0.565476)
+texture = ExtResource("3_pwuu4")
 
 [node name="ManaCost" type="Node2D" parent="."]
 position = Vector2(55, -100)

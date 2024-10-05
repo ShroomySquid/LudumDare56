@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlyvi51d1hw1h"]
+[gd_scene load_steps=6 format=3 uid="uid://dlyvi51d1hw1h"]
 
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_xyxub"]
 [ext_resource type="AudioStream" uid="uid://dk4dixgksotjc" path="res://Sound&Music/Le Reel Irlandais ou Bees Wax, Skin Sheep.mp3" id="2_8usk6"]
 [ext_resource type="AudioStream" uid="uid://dkh644yviqjn" path="res://Sound&Music/dmg.wav" id="2_8wav4"]
 [ext_resource type="PackedScene" uid="uid://bwb6bbcj0ix8o" path="res://Scripts/card_template.tscn" id="4_hq2qk"]
+[ext_resource type="Texture2D" uid="uid://c5rkjfxbjmkdp" path="res://Images/blue.jpg" id="6_p08wd"]
 
 [node name="Control" type="Node2D"]
 script = ExtResource("1_xyxub")
@@ -23,6 +24,7 @@ bus = &"SFX"
 title = "Felix"
 cost = 3
 type = 1
+texture = ExtResource("6_p08wd")
 description = "Yé beau"
 
 [node name="Will" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -30,6 +32,7 @@ title = "Will"
 cost = 2
 type = 2
 faction = 1
+texture = ExtResource("6_p08wd")
 id = 1
 description = "Yé presque portugais"
 
@@ -40,5 +43,6 @@ attack = 3
 attack_range = 1
 cost = 6
 faction = 2
+texture = ExtResource("6_p08wd")
 id = 2
 description = "Yé chevelu"
