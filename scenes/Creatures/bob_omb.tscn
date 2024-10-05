@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://bw3jm4vfeyr5e"]
+[gd_scene load_steps=5 format=3 uid="uid://bw3jm4vfeyr5e"]
 
-[node name="Bob-omb" type="Node2D"]
+[ext_resource type="Script" path="res://Scripts/Creatures/bob_omb.gd" id="1_cs06k"]
+[ext_resource type="Texture2D" uid="uid://biovuhg534lhk" path="res://Images/TestImages/3web.png" id="2_dq1fl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2q7ib"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attacking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dq1fl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obp3y"]
+
+[node name="Bobomb" type="Node2D"]
+script = ExtResource("1_cs06k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(0.0472222, 0.0511416)
+sprite_frames = SubResource("SpriteFrames_2q7ib")
+animation = &"idle"
+offset = Vector2(0, 0.065)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("CircleShape2D_obp3y")
