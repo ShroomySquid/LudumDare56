@@ -1,46 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4nelwcocvjte"]
+[gd_scene load_steps=3 format=3 uid="uid://drdtcbypimoey"]
 
-[ext_resource type="Texture2D" uid="uid://c5rkjfxbjmkdp" path="res://Images/blue.jpg" id="1_76etk"]
-[ext_resource type="Texture2D" uid="uid://xm02xx3q3384" path="res://Images/red.jpeg" id="2_wkbkl"]
+[ext_resource type="Texture2D" uid="uid://cmpbtkqvuxphg" path="res://Images/card_template.png" id="1_e8xn8"]
+[ext_resource type="Script" path="res://Scripts/card.gd" id="1_f4hih"]
 
-[node name="Card" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Card" type="Node2D"]
+position = Vector2(156, 148)
+script = ExtResource("1_f4hih")
 
-[node name="CardBackground" type="TextureRect" parent="."]
-layout_mode = 2
-offset_right = 218.0
-offset_bottom = 408.0
-texture = ExtResource("1_76etk")
-expand_mode = 1
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(17, -46)
+scale = Vector2(2, 2)
+texture = ExtResource("1_e8xn8")
 
-[node name="CardImg" type="TextureRect" parent="."]
-layout_mode = 2
-offset_left = 24.0
-offset_top = 26.0
-offset_right = 191.0
-offset_bottom = 194.0
-texture = ExtResource("2_wkbkl")
-expand_mode = 1
+[node name="Image" type="Sprite2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 215.0
-offset_right = 64.0
-offset_bottom = 255.0
-scale = Vector2(4.2, 4.24)
+[node name="ManaCost" type="Node2D" parent="."]
+position = Vector2(55, -100)
 
-[node name="Description" type="Label" parent="."]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 227.0
-offset_right = 177.0
-offset_bottom = 250.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "Ceci est une description"
+[node name="ManaCostLbl" type="Label" parent="ManaCost"]
+offset_right = 18.0
+offset_bottom = 23.0
+text = "5"
+
+[node name="CardDescription" type="Node2D" parent="."]
+position = Vector2(-56, 9)
+
+[node name="DescriptionLbl" type="Label" parent="CardDescription"]
+offset_right = 125.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 10
+text = "Ceci est un description"
+autowrap_mode = 2
+
+[node name="Name" type="Node2D" parent="."]
+position = Vector2(-30, -100)
+
+[node name="NameLbl" type="Label" parent="Name"]
+offset_left = -29.0
+offset_right = 67.0
+offset_bottom = 23.0
+text = "Nom
+"
+autowrap_mode = 2
