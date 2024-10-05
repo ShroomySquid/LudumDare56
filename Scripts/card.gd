@@ -25,13 +25,14 @@ func set_values(_cost, _name, _description):
 	description_lbl.text = description
 	name_lbl.text = card_name
 
-func _process(_delta):
-	if mouse_hover:
-		scale = Vector2(1.2, 1.2)
-	else:
-		scale = Vector2(1, 1)
+func _process(_delta):	
+	if mouse_hover && scale.x < 1.1:
+		await get_tree().create_timer(0.01).timeout
+		scale += Vector2(0.02, 0.02)
+	elif not mouse_hover && scale.x > 1:
+		await get_tree().create_timer(0.01).timeout
+		scale -= Vector2(0.02, 0.02)
 	if Input.is_action_just_pressed("LeftClick") && mouse_hover:
-		print("clicked")
 		card_activated.emit()
 
 func _on_mouse_hover_mouse_entered():
