@@ -9,9 +9,13 @@ extends Node2D
 @onready var deck = []
 @onready var deck_size := 20
 @onready var discard_pile = []
+@onready var cards_left = $Deck.cards_left
+@onready var cards_in_discard = $DiscardPile.cards_in_discard
 
 func _ready():
 	fill_deck()
+	cards_left.text = str(deck.size())
+	cards_in_discard.text = str(discard_pile.size())
 	for i in hand_size:
 		await get_tree().create_timer(0.2).timeout
 		create_card()
@@ -43,14 +47,17 @@ func _on_card_activated(_hand_pos):
 			render_card(i)
 
 func render_card(card):
+	if not card.id == -1:
+		discard_pile.append(card.id)
 	var top_card = GlobalControl.cards_prototype.get_children()[deck[0]]
-	card.set_values(top_card.cost, top_card.title, top_card.description, top_card.texture)
+	card.set_values(top_card.cost, top_card.title, top_card.description, top_card.texture, deck[0])
 	await get_tree().create_timer(0.5).timeout
 	card.show()
-	discard_pile.append(deck[0])
 	deck.remove_at(0)
 	if not deck.size():
 		reshuffle()
+	cards_left.text = str(deck.size())
+	cards_in_discard.text = str(discard_pile.size())
 
 func reshuffle():
 	deck = discard_pile

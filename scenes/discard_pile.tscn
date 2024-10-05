@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3xpytexxvo37"]
+[gd_scene load_steps=3 format=3 uid="uid://d3xpytexxvo37"]
 
 [ext_resource type="Texture2D" uid="uid://xm02xx3q3384" path="res://Images/red.jpeg" id="1_30yym"]
+[ext_resource type="Script" path="res://Scripts/discard_pile.gd" id="1_smv2o"]
 
 [node name="DiscardPile" type="Node2D"]
+script = ExtResource("1_smv2o")
 
 [node name="DiscardImg" type="Sprite2D" parent="."]
 position = Vector2(-7.62939e-06, -0.999989)

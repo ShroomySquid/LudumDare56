@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var cards_left = $CardsLeft
+@onready var cards_in_discard = $CardsInDiscard
 
 func _ready():
 	pass # Replace with function body.

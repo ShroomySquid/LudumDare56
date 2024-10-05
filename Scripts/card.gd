@@ -4,6 +4,8 @@ extends Node2D
 @onready var description_lbl = $CardDescription/DescriptionLbl
 @onready var name_lbl = $Name/NameLbl
 @onready var image = $Image
+@onready var id = -1
+
 signal card_activated
 
 var mouse_hover = false
@@ -15,7 +17,8 @@ func _ready():
 func _activate():
 	print("Entrypoint for card effect")
 
-func set_values(_cost, _name, _description, _texture):
+func set_values(_cost, _name, _description, _texture, _id):
+	id = _id
 	cost_lbl.text = str(_cost)
 	description_lbl.text = _description
 	name_lbl.text = _name
