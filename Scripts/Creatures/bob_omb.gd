@@ -5,8 +5,8 @@ var is_attacking = false
 
 func _ready():
 	pass
-	#$AnimatedSprite2D.play("idle")  # Start with idle animation
-
+	
+		
 func _process(delta):
 	if is_attacking:
 		$AnimatedSprite2D.play("attacking")
@@ -15,8 +15,11 @@ func _process(delta):
 		# Handle movement logic here
 	else:
 		$AnimatedSprite2D.play("idle")
-		$AudioStreamPlayer2D.play()
+		#$AudioStreamPlayer2D.play()
 
+#func initialize(position: Vector2):
+	#$AnimatedSprite2D.frame.position = position
+	
 # Example function to handle a collision
 func _on_body_entered(body):
 	# Respond to collision with another body (e.g., another creature or player)

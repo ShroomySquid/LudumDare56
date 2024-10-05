@@ -38,11 +38,10 @@ script = ExtResource("1_cs06k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 top_level = true
 z_index = 1
-position = Vector2(-6, -7)
-scale = Vector2(0.0144444, 0.0273437)
+position = Vector2(-5, -6)
+scale = Vector2(0.0338889, 0.033058)
 sprite_frames = SubResource("SpriteFrames_2q7ib")
 animation = &"idle"
-frame_progress = 0.181977
 centered = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
