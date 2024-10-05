@@ -12,10 +12,13 @@ extends Node2D
 signal card_activated
 
 var mouse_hover = false
-
+var id = 0
 
 func _ready():
-	set_values(cost, card_name, description)
+	pass
+
+func _activate():
+	print("Entrypoint for card effect")
 
 func set_values(_cost, _name, _description):
 	card_name = _name
@@ -24,8 +27,11 @@ func set_values(_cost, _name, _description):
 	cost_lbl.text = str(cost)
 	description_lbl.text = description
 	name_lbl.text = card_name
+	
+func set_id(_id):
+	id = _id
 
-func _process(_delta):	
+func _process(_delta):
 	if mouse_hover && scale.x < 1.1:
 		await get_tree().create_timer(0.01).timeout
 		scale += Vector2(0.02, 0.02)
@@ -33,7 +39,9 @@ func _process(_delta):
 		await get_tree().create_timer(0.01).timeout
 		scale -= Vector2(0.02, 0.02)
 	if Input.is_action_just_pressed("LeftClick") && mouse_hover:
-		card_activated.emit()
+		card_activated.emit(id)
+		_activate()
+		hide()
 
 func _on_mouse_hover_mouse_entered():
 	mouse_hover = true
