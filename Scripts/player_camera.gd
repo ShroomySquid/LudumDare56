@@ -19,7 +19,7 @@ func _process(_delta):
 	if position.x < min_x_camera && direction.x < 0:
 		direction.x = 0
 	position += (direction * 6) / zoom
-	if Input.is_action_just_pressed("WheelDown"):
+	if Input.is_action_just_pressed("WheelDown") && zoom.x < 10:
 		zoom *= 1.1
-	if Input.is_action_just_pressed("WheelUp"):
+	if Input.is_action_just_pressed("WheelUp") && zoom.x > 0.5:
 		zoom *= 0.9
