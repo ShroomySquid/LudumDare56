@@ -15,6 +15,10 @@ func spawn_creature(creature_type: CreatureType, position: Vector2):
 		var creature_instance = creature_scenes[creature_type].instantiate()
 		add_child(creature_instance)
 		creature_instance.position = position
+		print("Requested position: ", position)
+		print("Position of creature: ", creature_instance.position)
+
+		
 		print("Creature type summoned: ", creature_type)
 		return creature_instance
 	else:
@@ -23,5 +27,5 @@ func spawn_creature(creature_type: CreatureType, position: Vector2):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("down"):	
-		spawn_creature(CreatureType.CreatureA, Vector2(20, 39))
+		spawn_creature(CreatureType.CreatureA, Vector2(6, 72)) #TODO: change to position of base
 	pass

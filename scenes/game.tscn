@@ -60,6 +60,9 @@ visible = false
 [node name="SingleLane" parent="." instance=ExtResource("3_00exx")]
 
 [node name="CreatureContainer" type="Node2D" parent="."]
+show_behind_parent = true
+z_index = 1
+z_as_relative = false
 script = ExtResource("6_i0m7s")
 
 [connection signal="pressed" from="CanvasLayer/PauseBtn" to="." method="_on_pause_btn_pressed"]
