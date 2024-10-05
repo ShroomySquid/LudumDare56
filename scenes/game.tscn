@@ -1,20 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cubm8ayprtkdv"]
+[gd_scene load_steps=6 format=3 uid="uid://cubm8ayprtkdv"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_6a6vw"]
 [ext_resource type="PackedScene" uid="uid://bwrhsav1b6hkf" path="res://scenes/settings.tscn" id="2_2jvls"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="2_47ctw"]
 [ext_resource type="PackedScene" uid="uid://b7wxcfyqsfdki" path="res://single_lane.tscn" id="3_00exx"]
+[ext_resource type="PackedScene" uid="uid://i4stpw3qyfqs" path="res://cards_hand.tscn" id="4_7llsh"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_6a6vw")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PlayerCamera" type="Camera2D" parent="CanvasLayer"]
+[node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2(203, 517)
 zoom = Vector2(2, 2)
 script = ExtResource("2_47ctw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseBtn" type="Button" parent="CanvasLayer"]
 offset_right = 53.0
@@ -51,6 +52,9 @@ offset_left = 362.0
 offset_top = 276.0
 offset_right = -399.0
 offset_bottom = -185.0
+
+[node name="CardsHand" parent="CanvasLayer" instance=ExtResource("4_7llsh")]
+visible = false
 
 [node name="SingleLane" parent="." instance=ExtResource("3_00exx")]
 

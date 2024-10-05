@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://i4stpw3qyfqs"]
+
+[ext_resource type="PackedScene" uid="uid://d4nelwcocvjte" path="res://card.tscn" id="1_q8x2e"]
+
+[node name="CardsHand" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card" parent="." instance=ExtResource("1_q8x2e")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 382.0
+offset_top = 594.0
+offset_right = 382.0
+offset_bottom = 594.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Card2" parent="." instance=ExtResource("1_q8x2e")]
+layout_mode = 1
+offset_left = 522.0
+offset_top = 597.0
+offset_right = 522.0
+offset_bottom = 597.0
+
+[node name="Card3" parent="." instance=ExtResource("1_q8x2e")]
+layout_mode = 1
+offset_left = 661.0
+offset_top = 601.0
+offset_right = 661.0
+offset_bottom = 601.0
