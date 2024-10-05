@@ -18,8 +18,10 @@ offset_bottom = 68.0
 text = "Generate card 2
 "
 
-[node name="CardPosition" type="Marker2D" parent="."]
-position = Vector2(516, 298)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SpawnPoint" type="Node2D" parent="CanvasLayer"]
+position = Vector2(449, 906)
 
 [connection signal="pressed" from="GenerateCard1" to="." method="_on_generate_card_1_pressed"]
 [connection signal="pressed" from="GenerateCard2" to="." method="_on_generate_card_2_pressed"]

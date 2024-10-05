@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://drdtcbypimoey"]
+[gd_scene load_steps=4 format=3 uid="uid://drdtcbypimoey"]
 
 [ext_resource type="Texture2D" uid="uid://cmpbtkqvuxphg" path="res://Images/card_template.png" id="1_e8xn8"]
 [ext_resource type="Script" path="res://Scripts/card.gd" id="1_f4hih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mrrf"]
+size = Vector2(159, 254)
 
 [node name="Card" type="Node2D"]
 position = Vector2(156, 148)
@@ -42,3 +45,12 @@ offset_bottom = 23.0
 text = "Nom
 "
 autowrap_mode = 2
+
+[node name="MouseHover" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseHover"]
+position = Vector2(1.5, 18)
+shape = SubResource("RectangleShape2D_2mrrf")
+
+[connection signal="mouse_entered" from="MouseHover" to="." method="_on_mouse_hover_mouse_entered"]
+[connection signal="mouse_exited" from="MouseHover" to="." method="_on_mouse_hover_mouse_exited"]
