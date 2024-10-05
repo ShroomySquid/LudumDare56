@@ -3,6 +3,11 @@ extends Node2D  # Parent node
 var is_walking = false
 var is_attacking = false
 
+
+
+# Stats for the monster here
+
+
 func _ready():
 	pass
 	
