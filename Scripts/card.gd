@@ -36,10 +36,9 @@ func _process(_delta):
 		await get_tree().create_timer(0.01).timeout
 		scale -= Vector2(0.02, 0.02)
 	if Input.is_action_just_pressed("LeftClick") && mouse_hover:
-		print("hello")
 		card_activated.emit(hand_pos)
 		_activate()
-		hide()
+		#hide()
 
 func _on_mouse_hover_mouse_entered():
 	mouse_hover = true
