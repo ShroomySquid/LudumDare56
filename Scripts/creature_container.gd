@@ -5,11 +5,6 @@ enum CreatureType {CreatureA, CreatureB, CreatureC }
 var creature_scenes = {
 	CreatureType.CreatureA: preload("res://scenes/Creatures/bob_omb.tscn")
 }
-var creature_instance
-
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -34,10 +29,7 @@ func spawn_creature(creature_type: CreatureType, position: Vector2):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("down"):	
-		creature_instance = spawn_creature(CreatureType.CreatureA, Vector2(-6, -72)) #TODO: change to position of base
-	if Input.is_action_just_pressed("B"):
-		creature_instance.position += Vector2(10, 0)
-	#if Input.is_action_just_pressed("B"):
-		#creature_instance.queue_free()
+		spawn_creature(CreatureType.CreatureA, Vector2(6, 72)) #TODO: change to position of base
+	if Input.is_action_pressed("B"):
+		self.position += Vector2(10, 0)
 	pass
-	

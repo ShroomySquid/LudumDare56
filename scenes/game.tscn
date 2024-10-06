@@ -58,7 +58,7 @@ offset_bottom = -185.0
 
 [node name="SingleLane" parent="." instance=ExtResource("3_00exx")]
 
-[node name="CreatureContainer" type="Node2D" parent="SingleLane"]
+[node name="CreatureContainer" type="Node2D" parent="."]
 show_behind_parent = true
 z_index = 1
 z_as_relative = false
