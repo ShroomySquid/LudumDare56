@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8xf6d30x5o47"]
+
+[ext_resource type="Script" path="res://Scripts/mana.gd" id="1_sj5cn"]
+
+[node name="Mana" type="Node2D"]
+script = ExtResource("1_sj5cn")
+
+[node name="ManaBackground" type="Sprite2D" parent="."]
+
+[node name="CurrentMana" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0/10"

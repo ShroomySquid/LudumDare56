@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://drdtcbypimoey"]
+
+[ext_resource type="Texture2D" uid="uid://cmpbtkqvuxphg" path="res://Images/card_template.png" id="1_e8xn8"]
+[ext_resource type="Script" path="res://Scripts/card.gd" id="1_f4hih"]
+[ext_resource type="Texture2D" uid="uid://xm02xx3q3384" path="res://Images/red.jpeg" id="3_pwuu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mrrf"]
+size = Vector2(159, 254)
+
+[node name="Card" type="Node2D"]
+position = Vector2(156, 148)
+script = ExtResource("1_f4hih")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(17, -46)
+scale = Vector2(2, 2)
+texture = ExtResource("1_e8xn8")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(2, -45.5)
+scale = Vector2(0.421405, 0.565476)
+texture = ExtResource("3_pwuu4")
+
+[node name="ManaCost" type="Node2D" parent="."]
+position = Vector2(55, -100)
+
+[node name="ManaCostLbl" type="Label" parent="ManaCost"]
+offset_right = 18.0
+offset_bottom = 23.0
+text = "5"
+
+[node name="CardDescription" type="Node2D" parent="."]
+position = Vector2(-56, 9)
+
+[node name="DescriptionLbl" type="Label" parent="CardDescription"]
+offset_right = 125.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 10
+text = "Ceci est un description"
+autowrap_mode = 2
+
+[node name="Name" type="Node2D" parent="."]
+position = Vector2(-30, -100)
+
+[node name="NameLbl" type="Label" parent="Name"]
+offset_left = -29.0
+offset_right = 67.0
+offset_bottom = 23.0
+text = "Nom
+"
+autowrap_mode = 2
+
+[node name="MouseHover" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseHover"]
+position = Vector2(1.5, 18)
+shape = SubResource("RectangleShape2D_2mrrf")
+
+[connection signal="mouse_entered" from="MouseHover" to="." method="_on_mouse_hover_mouse_entered"]
+[connection signal="mouse_exited" from="MouseHover" to="." method="_on_mouse_hover_mouse_exited"]

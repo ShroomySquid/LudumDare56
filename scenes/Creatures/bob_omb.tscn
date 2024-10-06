@@ -1,0 +1,136 @@
+[gd_scene load_steps=14 format=3 uid="uid://cr86c1soqsbvr"]
+
+[ext_resource type="Script" path="res://Scripts/Creatures/bob_omb.gd" id="1_cs06k"]
+[ext_resource type="Texture2D" uid="uid://bcdnpj3i1iup3" path="res://Images/Sprites/Bob_omb/attack_1.png" id="2_17ur0"]
+[ext_resource type="Texture2D" uid="uid://ixpf716itimc" path="res://Images/Sprites/Bob_omb/attack_2.png" id="3_2obgi"]
+[ext_resource type="AudioStream" uid="uid://b53gru5hmafbq" path="res://Sound&Music/Creatures/Bob_omb/-16 bomb.mp3" id="4_c560w"]
+[ext_resource type="Texture2D" uid="uid://djr8opyb76tn1" path="res://Images/Sprites/Bob_omb/walk_down_1.png" id="4_y7cq8"]
+[ext_resource type="Texture2D" uid="uid://cwi3ospd5efbl" path="res://Images/Sprites/Bob_omb/walk_down_2.png" id="5_excon"]
+[ext_resource type="Texture2D" uid="uid://csf2utkkb2u0g" path="res://Images/Sprites/Bob_omb/walk_up_1.png" id="6_tnswd"]
+[ext_resource type="Texture2D" uid="uid://35jkqruqspyw" path="res://Images/Sprites/Bob_omb/walk_up_2.png" id="7_lb0bl"]
+[ext_resource type="FontFile" uid="uid://b1fdeno0huvw8" path="res://Font/PressStart2P.ttf" id="9_qr33y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obp3y"]
+radius = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2q7ib"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("2_17ur0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2obgi")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y7cq8")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tnswd")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y7cq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_excon")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tnswd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lb0bl")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ki6wf"]
+radius = 2.0
+
+[sub_resource type="Theme" id="Theme_piv55"]
+
+[node name="Bobomb" type="Node2D"]
+script = ExtResource("1_cs06k")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+scale = Vector2(13, 13)
+shape = SubResource("CircleShape2D_obp3y")
+debug_color = Color(0, 1, 0.345098, 0.945098)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_2q7ib")
+animation = &"walk_down"
+autoplay = "walk_down"
+centered = false
+offset = Vector2(-16, -16)
+flip_h = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_c560w")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="DamageCollision" type="CollisionShape2D" parent="DamageArea"]
+scale = Vector2(19, 19)
+shape = SubResource("CircleShape2D_ki6wf")
+debug_color = Color(0.811765, 0.0352941, 0, 0.909804)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.7
+one_shot = true
+
+[node name="SoundTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -27.0
+offset_top = -25.0
+offset_right = 85.0
+offset_bottom = -8.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/table_border = Color(1, 1, 1, 0)
+theme_override_fonts/normal_font = ExtResource("9_qr33y")
+text = "Bob omb"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -29.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = -14.0
+theme = SubResource("Theme_piv55")
+theme_override_colors/font_color = Color(0.481273, 1.07091e-06, 3.60981e-07, 1)
+theme_override_colors/font_outline_color = Color(0.784314, 0.0627451, 0, 1)
+max_value = 10.0
+fill_mode = 1
+show_percentage = false
