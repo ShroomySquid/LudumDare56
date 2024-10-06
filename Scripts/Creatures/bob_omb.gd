@@ -11,7 +11,7 @@ var is_facing_down: bool = false
 var is_ennemy: bool = false
 
 # Creature ressources
-@onready var card_stats = GlobalControl.cards_prototype.get_children()[3]
+@onready var card_stats = GlobalControl.cards_prototype.get_children()[0]
 
 @onready var health = card_stats.health
 
