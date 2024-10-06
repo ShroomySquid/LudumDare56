@@ -33,7 +33,7 @@ func spawn_creature(creature_type: CreatureType, position: Vector2):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("down"):	
+	if Input.is_action_pressed("M"):	
 		spawn_creature(CreatureType.CreatureA, Vector2(200, 500)) #TODO: change to position of base
 	pass
 	
