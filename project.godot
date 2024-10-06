@@ -21,8 +21,7 @@ GlobalControl="*res://scenes/Control.tscn"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1200
+window/stretch/mode="canvas_items"
 
 [input]
 

@@ -5,6 +5,7 @@ extends Control
 @onready var menu = $CanvasLayer/MenuContainer
 
 func _ready():
+	DisplayServer.window_set_size(Vector2(800, 600))
 	settings.hide()
 
 func _process(_delta):
@@ -20,3 +21,6 @@ func _on_settings_btn_pressed():
 func _on_settings_exit_settings():
 	menu.show()
 	settings.hide()
+
+func _on_quit_pressed():
+	get_tree().quit()

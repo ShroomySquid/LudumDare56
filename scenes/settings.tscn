@@ -49,4 +49,23 @@ layout_mode = 2
 max_value = 70.0
 value = 40.0
 
+[node name="ResolutionLbl" type="Label" parent="."]
+layout_mode = 2
+text = "Resolution"
+horizontal_alignment = 1
+
+[node name="ResolutionDropdown" type="OptionButton" parent="."]
+layout_mode = 2
+selected = 2
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1024x768"
+popup/item_1/id = 1
+popup/item_2/text = "800x600"
+popup/item_2/id = 2
+
 [connection signal="pressed" from="MarginContainer/MainMenuBtn" to="." method="_on_main_menu_btn_pressed"]
+[connection signal="value_changed" from="MasterSoundSlider" to="." method="_on_master_sound_slider_value_changed"]
+[connection signal="value_changed" from="MusicSoundSlider" to="." method="_on_music_sound_slider_value_changed"]
+[connection signal="value_changed" from="SFXSoundSlider" to="." method="_on_sfx_sound_slider_value_changed"]
+[connection signal="item_selected" from="ResolutionDropdown" to="." method="_on_resolution_dropdown_item_selected"]
