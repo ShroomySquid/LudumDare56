@@ -3,9 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_6a6vw"]
 [ext_resource type="PackedScene" uid="uid://bwrhsav1b6hkf" path="res://scenes/settings.tscn" id="2_2jvls"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="2_47ctw"]
-[ext_resource type="PackedScene" path="res://single_lane.tscn" id="3_00exx"]
-[ext_resource type="PackedScene" path="res://scenes/card_UI.tscn" id="4_okrk5"]
-[ext_resource type="Script" path="res://scripts/creature_container.gd" id="6_i0m7s"]
+[ext_resource type="PackedScene" uid="uid://bbb7x8iedogb0" path="res://scenes/card_UI.tscn" id="4_okrk5"]
+[ext_resource type="PackedScene" uid="uid://b7wxcfyqsfdki" path="res://scenes/single_lane.tscn" id="5_2j5kj"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -61,7 +60,7 @@ offset_top = 276.0
 offset_right = -399.0
 offset_bottom = -185.0
 
-[node name="SingleLane" parent="." instance=ExtResource("5_nygc5")]
+[node name="SingleLane" parent="." instance=ExtResource("5_2j5kj")]
 
 [node name="CreatureContainer" type="Node2D" parent="."]
 show_behind_parent = true
