@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c88pvnreivhm0"]
+
+[ext_resource type="Script" path="res://Scripts/checkpoint.gd" id="1_m6vfc"]
+[ext_resource type="Texture2D" uid="uid://dae44v8vnxdu2" path="res://Images/circle.png" id="2_xsuue"]
+
+[node name="Checkpoint" type="Marker2D"]
+script = ExtResource("1_m6vfc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CheckpointArea" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-1, -1)
+polygon = PackedVector2Array(-60, 0, 0, -30, 60, 0, 0, 30)
+
+[node name="LightPlayer" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(-1, 0)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_xsuue")
+
+[node name="LightAI" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-1, 0)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_xsuue")
+
+[node name="LightNeutral" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_xsuue")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
