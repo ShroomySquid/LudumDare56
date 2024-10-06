@@ -161,6 +161,7 @@ description = "Whenever this unit deals dammage, HEAL 1"
 [node name="The Voice" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "The Voice"
 cost = 7
+faction = 1
 description = "This unit gets +1/+1 for every allied alien unit."
 
 [node name="Data center_EMP" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -200,62 +201,6 @@ cost = 3
 faction = 2
 description = "None"
 
-[node name="Nature2" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
-description = "None"
-
-[node name="Nature3" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
-description = "None"
-
-[node name="Nature4" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
-description = "None"
-
-[node name="Nature5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
-description = "None"
-
-[node name="Nature6" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
-description = "None"
-
-[node name="Nature7" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
-description = "None"
-
-[node name="Nature8" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
-description = "None"
-
-[node name="Nature9" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
-description = "None"
-
 [node name="Energizer" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "Energizer"
 health = 3
@@ -277,20 +222,6 @@ attack = 2
 health = 2
 cost = 3
 faction = 2
-description = "None"
-
-[node name="Neutral3" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
-description = "None"
-
-[node name="Neutral4" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
 description = "None"
 
 [node name="Neutral5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
