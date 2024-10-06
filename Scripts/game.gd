@@ -70,5 +70,5 @@ func _spawn_creature(_is_player_mob):
 		new_mob.is_player_mob = false
 	new_mob.make_path()
 
-func _on_card_ui_card_effect():
-	pass # Replace with function body.
+func _on_card_ui_card_effect(_card):
+	print("has been played: ", _card.title)

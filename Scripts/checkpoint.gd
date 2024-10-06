@@ -13,7 +13,7 @@ signal update_checkpoint
 func _ready():
 	_update_light()
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func check_control():

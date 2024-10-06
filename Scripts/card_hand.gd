@@ -71,7 +71,7 @@ func _on_card_activated(_hand_pos):
 				i.hide()
 				_update_mana(card_list[i.id].cost * -1)
 				render_card(i)
-				card_effect.emit(i.id)
+				card_effect.emit(card_list[i.id])
 			else:
 				print("nope")
 
