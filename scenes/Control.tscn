@@ -43,13 +43,6 @@ faction = 2
 id = 2
 description = "Yé chevelu"
 
-[node name="Pest" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
-attack = 1
-health = 1
-cost = 3
-description = "None"
-
 [node name="Bob-omb" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "Bob-omb"
 health = 1
@@ -66,30 +59,271 @@ cost = 2
 id = 2
 description = "None"
 
-[node name="Pest3" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+[node name="Goblin slingers" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Goblin slingers"
+attack = 2
+health = 1
+cost = 3
+description = "Ranged"
+
+[node name="Overclocked mech" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Overclocked mech"
+attack = 2
+health = 6
+cost = 4
+description = "Apply HEAT 1 to this unit whenever this unit attacks."
+
+[node name="Decoys" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Decoys"
+attack = 1
+health = 1
+cost = 3
+description = "Apply HEAT 1 to creatures attacking this unit"
+
+[node name="Flamer" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Flamer"
+attack = 2
+health = 2
+cost = 5
+description = "Attacks apply HEAT 2"
+
+[node name="Melter" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Melter"
+attack = 1
+health = 2
+cost = 4
+description = "Attack + 5 if hitting an overheated unit."
+
+[node name="Scrap Factory __ Surprise!" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Scrap Factory // Surprise!"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Thermal plant __ Microwave beam" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Thermal plant // Microwave beam"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Reactor__Heatsink" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Reactor//Heatsink"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Pest" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "Pest"
 attack = 1
 health = 1
 cost = 3
 description = "None"
 
-[node name="Pest4" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+[node name="Retriever" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Retriever"
+attack = 2
+health = 2
+cost = 3
+faction = 1
+description = "Whenever this unit kills another unit, generate 1 energy"
+
+[node name="Relay" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Relay"
+health = 1
+cost = 3
+description = "Nearby allied alien units gain 1 power."
+
+[node name="Probe" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Probe"
+attack = 1
+health = 3
+cost = 2
+description = "When this unit hits a building, generate 2 energy."
+
+[node name="Crawler" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Crawler"
+attack = 1
+health = 1
+cost = 1
+description = "None"
+
+[node name="Leech" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Leech"
+attack = 2
+health = 2
+cost = 3
+faction = 1
+description = "Whenever this unit deals dammage, HEAL 1"
+
+[node name="The Voice" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "The Voice"
+cost = 7
+description = "This unit gets +1/+1 for every allied alien unit."
+
+[node name="Data center_EMP" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Data center // EMP"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Thermal plant__Microwave beam" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Thermal plant // Microwave beam"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Beacon__Death from above" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Beacon//Death from above"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Colossal Dreadmaw" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Colossal Dreadmaw"
+attack = 3
+health = 6
+cost = 4
+faction = 2
+description = "None"
+
+[node name="Rats" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Rats"
+attack = 1
+health = 1
+cost = 3
+faction = 2
+description = "None"
+
+[node name="Nature2" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "Pest"
 attack = 1
 health = 1
 cost = 3
 description = "None"
 
-[node name="Pest5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+[node name="Nature3" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "Pest"
 attack = 1
 health = 1
 cost = 3
 description = "None"
 
-[node name="Pest6" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+[node name="Nature4" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "Pest"
 attack = 1
 health = 1
 cost = 3
 description = "None"
+
+[node name="Nature5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Nature6" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Nature7" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Nature8" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Nature9" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Energizer" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Energizer"
+health = 3
+cost = 3
+faction = 2
+description = "None"
+
+[node name="Demolition crew" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Demolition crew"
+attack = 2
+health = 1
+cost = 3
+faction = 2
+description = "Deals double damage to buildings"
+
+[node name="Knights" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Knights"
+attack = 2
+health = 2
+cost = 3
+faction = 2
+description = "None"
+
+[node name="Neutral3" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Neutral4" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Neutral5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Neutral6" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Neutral7" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Neutral8" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+description = "None"
+
+[node name="Solar panel __ Solar flare" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Solar panel//Solar flare"
+cost = 3
+type = 1
+faction = 2
+description = "Slowly generates energy"
