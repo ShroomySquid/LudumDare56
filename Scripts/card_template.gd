@@ -1,8 +1,8 @@
 extends ResourcePreloader
 
 @export var title : String
-@export var health : int
 @export var attack : int
+@export var health : int
 @export var attack_range : int
 @export var cost : int
 @export var type := Type.CREATURE
