@@ -82,7 +82,8 @@ B={
 
 [layer_names]
 
-2d_physics/layer_1="Player"
+2d_physics/layer_1="Mob"
+2d_navigation/layer_1="road"
 2d_physics/layer_2="Terrain"
 
 [rendering]

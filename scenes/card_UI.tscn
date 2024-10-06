@@ -20,4 +20,4 @@ position = Vector2(66, 424)
 position = Vector2(67, 551)
 
 [node name="Mana" parent="." instance=ExtResource("4_66u4a")]
-position = Vector2(603, 526)
+position = Vector2(1061, 530)
