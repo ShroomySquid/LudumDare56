@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalControl="*res://scenes/Control.tscn"
+SignalManager="*res://Scripts/autoload/SignalManager.gd"
 
 [display]
 

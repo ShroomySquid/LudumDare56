@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_xyxub"]
 [ext_resource type="AudioStream" uid="uid://dk4dixgksotjc" path="res://Sound&Music/Le Reel Irlandais ou Bees Wax, Skin Sheep.mp3" id="2_8usk6"]
 [ext_resource type="AudioStream" uid="uid://dkh644yviqjn" path="res://Sound&Music/dmg.wav" id="2_8wav4"]
-[ext_resource type="PackedScene" uid="uid://bwb6bbcj0ix8o" path="res://scenes/card_template.tscn" id="4_hq2qk"]
+[ext_resource type="PackedScene" path="res://scenes/card_template.tscn" id="4_hq2qk"]
 
 [node name="Control" type="Node2D"]
 script = ExtResource("1_xyxub")
@@ -42,3 +42,285 @@ cost = 6
 faction = 2
 id = 2
 description = "Yé chevelu"
+
+[node name="Bob-omb" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Bob-omb"
+health = 1
+attack_range = -1
+cost = 2
+id = 1
+description = "On death: Explode and deal (?) damage to all surrounding units"
+
+[node name="Fire-fists" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Fire-fists"
+health = 3
+attack = 1
+cost = 2
+id = 2
+description = "None"
+
+[node name="Goblins2" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Goblins3" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Goblins4" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Goblins5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Goblins6" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Goblins7" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Goblins8" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Goblins9" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Pest" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Aliens1" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Aliens2" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Aliens3" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Aliens4" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Aliens5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Aliens6" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Aliens7" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Aliens8" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Aliens9" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Nature0" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Nature1" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Nature2" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Nature3" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Nature4" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Nature5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Nature6" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Nature7" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Nature8" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Nature9" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Neutral0" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Neutral1" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Neutral2" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Neutral3" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Neutral4" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Neutral5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Neutral6" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Neutral7" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Neutral8" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
+
+[node name="Neutral9" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Pest"
+health = 1
+attack = 1
+cost = 3
+description = "None"
