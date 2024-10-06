@@ -49,7 +49,7 @@ func _ready():
 	pass
 	
 		
-func _process(delta):
+func _process(_delta):
 	if is_attacking:
 		if $AnimatedSprite2D.frame == 1:
 			$AnimatedSprite2D.scale = Vector2(2, 2)

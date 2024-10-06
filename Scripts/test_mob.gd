@@ -31,10 +31,14 @@ func make_path():
 	nav_agent.target_position = target.global_position
 
 func _on_line_of_sight_body_entered(body):
+	if not body.has_method("make_path"):
+		return
 	if body.is_player_mob != is_player_mob:
 		potential_targets.append(body)
 
 func _on_line_of_sight_body_exited(body):
+	if not body.has_method("make_path"):
+		return
 	if body.is_player_mob != is_player_mob:
 		potential_targets.erase(body)
 
