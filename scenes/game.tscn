@@ -67,6 +67,11 @@ show_behind_parent = true
 z_index = 1
 z_as_relative = false
 
+[node name="BuildingContainer" type="Node2D" parent="."]
+show_behind_parent = true
+z_index = 1
+z_as_relative = false
+
 [node name="CreatureSpawnTimer" type="Timer" parent="."]
 autostart = true
 
