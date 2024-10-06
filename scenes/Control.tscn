@@ -48,7 +48,6 @@ title = "Bob-omb"
 health = 1
 attack_range = -1
 cost = 2
-id = 1
 description = "On death: Explode and deal (?) damage to all surrounding units"
 
 [node name="Fire-fists" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -56,7 +55,7 @@ title = "Fire-fists"
 attack = 1
 health = 3
 cost = 2
-id = 2
+id = 1
 description = "None"
 
 [node name="Goblin slingers" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -64,6 +63,7 @@ title = "Goblin slingers"
 attack = 2
 health = 1
 cost = 3
+id = 2
 description = "Ranged"
 
 [node name="Overclocked mech" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -71,6 +71,7 @@ title = "Overclocked mech"
 attack = 2
 health = 6
 cost = 4
+id = 3
 description = "Apply HEAT 1 to this unit whenever this unit attacks."
 
 [node name="Decoys" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -78,6 +79,7 @@ title = "Decoys"
 attack = 1
 health = 1
 cost = 3
+id = 4
 description = "Apply HEAT 1 to creatures attacking this unit"
 
 [node name="Flamer" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -85,6 +87,7 @@ title = "Flamer"
 attack = 2
 health = 2
 cost = 5
+id = 5
 description = "Attacks apply HEAT 2"
 
 [node name="Melter" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -92,6 +95,7 @@ title = "Melter"
 attack = 1
 health = 2
 cost = 4
+id = 6
 description = "Attack + 5 if hitting an overheated unit."
 
 [node name="Scrap Factory __ Surprise!" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -99,6 +103,7 @@ title = "Scrap Factory // Surprise!"
 attack = 1
 health = 1
 cost = 3
+id = 7
 description = "None"
 
 [node name="Thermal plant __ Microwave beam" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -106,6 +111,7 @@ title = "Thermal plant // Microwave beam"
 attack = 1
 health = 1
 cost = 3
+id = 8
 description = "None"
 
 [node name="Reactor__Heatsink" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -113,6 +119,7 @@ title = "Reactor//Heatsink"
 attack = 1
 health = 1
 cost = 3
+id = 9
 description = "None"
 
 [node name="Pest" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -120,6 +127,7 @@ title = "Pest"
 attack = 1
 health = 1
 cost = 3
+id = 10
 description = "None"
 
 [node name="Retriever" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -128,12 +136,14 @@ attack = 2
 health = 2
 cost = 3
 faction = 1
+id = 11
 description = "Whenever this unit kills another unit, generate 1 energy"
 
 [node name="Relay" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "Relay"
 health = 1
 cost = 3
+id = 12
 description = "Nearby allied alien units gain 1 power."
 
 [node name="Probe" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -141,6 +151,7 @@ title = "Probe"
 attack = 1
 health = 3
 cost = 2
+id = 13
 description = "When this unit hits a building, generate 2 energy."
 
 [node name="Crawler" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -148,6 +159,7 @@ title = "Crawler"
 attack = 1
 health = 1
 cost = 1
+id = 14
 description = "None"
 
 [node name="Leech" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -156,12 +168,14 @@ attack = 2
 health = 2
 cost = 3
 faction = 1
+id = 15
 description = "Whenever this unit deals dammage, HEAL 1"
 
 [node name="The Voice" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "The Voice"
 cost = 7
 faction = 1
+id = 16
 description = "This unit gets +1/+1 for every allied alien unit."
 
 [node name="Data center_EMP" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -169,6 +183,7 @@ title = "Data center // EMP"
 attack = 1
 health = 1
 cost = 3
+id = 17
 description = "None"
 
 [node name="Thermal plant__Microwave beam" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -176,6 +191,7 @@ title = "Thermal plant // Microwave beam"
 attack = 1
 health = 1
 cost = 3
+id = 18
 description = "None"
 
 [node name="Beacon__Death from above" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -183,6 +199,7 @@ title = "Beacon//Death from above"
 attack = 1
 health = 1
 cost = 3
+id = 19
 description = "None"
 
 [node name="Colossal Dreadmaw" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -191,6 +208,7 @@ attack = 3
 health = 6
 cost = 4
 faction = 2
+id = 20
 description = "None"
 
 [node name="Rats" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -199,6 +217,7 @@ attack = 1
 health = 1
 cost = 3
 faction = 2
+id = 21
 description = "None"
 
 [node name="Energizer" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -206,6 +225,7 @@ title = "Energizer"
 health = 3
 cost = 3
 faction = 2
+id = 22
 description = "None"
 
 [node name="Demolition crew" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -214,6 +234,7 @@ attack = 2
 health = 1
 cost = 3
 faction = 2
+id = 23
 description = "Deals double damage to buildings"
 
 [node name="Knights" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -222,6 +243,7 @@ attack = 2
 health = 2
 cost = 3
 faction = 2
+id = 24
 description = "None"
 
 [node name="Neutral5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -229,6 +251,7 @@ title = "Pest"
 attack = 1
 health = 1
 cost = 3
+id = 25
 description = "None"
 
 [node name="Neutral6" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -236,6 +259,7 @@ title = "Pest"
 attack = 1
 health = 1
 cost = 3
+id = 26
 description = "None"
 
 [node name="Neutral7" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -243,6 +267,7 @@ title = "Pest"
 attack = 1
 health = 1
 cost = 3
+id = 27
 description = "None"
 
 [node name="Neutral8" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -250,6 +275,7 @@ title = "Pest"
 attack = 1
 health = 1
 cost = 3
+id = 28
 description = "None"
 
 [node name="Solar panel __ Solar flare" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
