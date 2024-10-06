@@ -14,9 +14,6 @@ var hand_pos = 0
 func _ready():
 	pass
 
-func _activate():
-	print("Entrypoint for card effect")
-
 func set_values(_cost, _name, _description, _texture, _id):
 	id = _id
 	cost_lbl.text = str(_cost)
@@ -37,8 +34,6 @@ func _process(_delta):
 		scale -= Vector2(0.02, 0.02)
 	if Input.is_action_just_pressed("LeftClick") && mouse_hover:
 		card_activated.emit(hand_pos)
-		_activate()
-		#hide()
 
 func _on_mouse_hover_mouse_entered():
 	mouse_hover = true

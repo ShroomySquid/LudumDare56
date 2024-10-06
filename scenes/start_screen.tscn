@@ -43,6 +43,10 @@ text = "Start
 layout_mode = 2
 text = "Settings"
 
+[node name="Quit" type="Button" parent="CanvasLayer/MenuContainer"]
+layout_mode = 2
+text = "Quit"
+
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("2_20652")]
 offset_left = 387.0
 offset_top = 280.0
@@ -51,4 +55,5 @@ offset_bottom = -174.0
 
 [connection signal="pressed" from="CanvasLayer/MenuContainer/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="exit_settings" from="CanvasLayer/Settings" to="." method="_on_settings_exit_settings"]

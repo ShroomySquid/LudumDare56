@@ -20,6 +20,8 @@ extends Node2D
 @onready var current_mana_lbl = $Mana.current_mana
 @onready var restore_mana_ready = true
 
+signal card_effect
+
 func _ready():
 	fill_deck()
 	cards_left.text = str(deck.size())
@@ -39,7 +41,7 @@ func create_card():
 	hand.add_child(new_card)
 	new_card.position = spawn_point.position
 	new_card.position.x += position_decay
-	position_decay += 200
+	position_decay += 175
 	new_card.hand_pos = hand_pos
 	hand_pos += 1
 	render_card(new_card)
@@ -69,6 +71,7 @@ func _on_card_activated(_hand_pos):
 				i.hide()
 				_update_mana(card_list[i.id].cost * -1)
 				render_card(i)
+				card_effect.emit(i.id)
 			else:
 				print("nope")
 

@@ -48,6 +48,7 @@ title = "Bob-omb"
 health = 1
 attack_range = -1
 cost = 2
+id = 0
 description = "On death: Explode and deal (?) damage to all surrounding units"
 
 [node name="Fire-fists" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]

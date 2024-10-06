@@ -21,3 +21,11 @@ func _on_sfx_sound_slider_value_changed(value):
 
 func _on_main_menu_btn_pressed():
 	exit_settings.emit()
+
+func _on_resolution_dropdown_item_selected(index):
+	if index == 0:
+		DisplayServer.window_set_size(Vector2(1920, 1080))
+	if index == 1:
+		DisplayServer.window_set_size(Vector2(1024, 768))
+	if index == 2:
+		DisplayServer.window_set_size(Vector2(800, 600))

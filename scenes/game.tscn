@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_6a6vw"]
 [ext_resource type="PackedScene" uid="uid://bwrhsav1b6hkf" path="res://scenes/settings.tscn" id="2_2jvls"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="2_47ctw"]
-[ext_resource type="PackedScene" uid="uid://b7wxcfyqsfdki" path="res://scenes/single_lane.tscn" id="3_00exx"]
 [ext_resource type="PackedScene" uid="uid://bbb7x8iedogb0" path="res://scenes/card_UI.tscn" id="4_okrk5"]
+[ext_resource type="PackedScene" uid="uid://b7wxcfyqsfdki" path="res://scenes/single_lane.tscn" id="5_2j5kj"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -16,6 +16,9 @@ zoom = Vector2(2, 2)
 script = ExtResource("2_47ctw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CardUI" parent="CanvasLayer" instance=ExtResource("4_okrk5")]
+position = Vector2(1, 65)
 
 [node name="PauseBtn" type="Button" parent="CanvasLayer"]
 offset_right = 53.0
@@ -46,6 +49,10 @@ text = "Settings
 layout_mode = 2
 text = "Resume"
 
+[node name="Quit" type="Button" parent="CanvasLayer/MenuContainer"]
+layout_mode = 2
+text = "Quit"
+
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("2_2jvls")]
 visible = false
 offset_left = 362.0
@@ -53,11 +60,20 @@ offset_top = 276.0
 offset_right = -399.0
 offset_bottom = -185.0
 
-[node name="CardUI" parent="CanvasLayer" instance=ExtResource("4_okrk5")]
+[node name="SingleLane" parent="." instance=ExtResource("5_2j5kj")]
 
-[node name="SingleLane" parent="." instance=ExtResource("3_00exx")]
+[node name="CreatureContainer" type="Node2D" parent="."]
+show_behind_parent = true
+z_index = 1
+z_as_relative = false
 
+[node name="CreatureSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="card_effect" from="CanvasLayer/CardUI" to="." method="_on_card_ui_card_effect"]
 [connection signal="pressed" from="CanvasLayer/PauseBtn" to="." method="_on_pause_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuContainer/SettingBtn" to="." method="_on_setting_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="exit_settings" from="CanvasLayer/Settings" to="." method="_on_settings_exit_settings"]
+[connection signal="timeout" from="CreatureSpawnTimer" to="." method="_on_creature_spawn_timer_timeout"]
