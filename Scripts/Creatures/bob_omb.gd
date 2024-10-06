@@ -57,7 +57,7 @@ func _process(delta):
 		else:
 			$AnimatedSprite2D.play("idle_down")
 			
-	if Input.is_action_pressed("B"):
+	if Input.is_action_pressed("B") and is_attacking == false:
 		attack()
 		#$AudioStreamPlayer2D.play()
 	#if $DamageArea/DamageCollision. #TODO make this
