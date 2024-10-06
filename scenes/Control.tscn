@@ -103,6 +103,7 @@ title = "Scrap Factory // Surprise!"
 attack = 1
 health = 1
 cost = 3
+type = 1
 id = 7
 description = "None"
 
@@ -111,6 +112,7 @@ title = "Thermal plant // Microwave beam"
 attack = 1
 health = 1
 cost = 3
+type = 1
 id = 8
 description = "None"
 
@@ -119,6 +121,7 @@ title = "Reactor//Heatsink"
 attack = 1
 health = 1
 cost = 3
+type = 1
 id = 9
 description = "None"
 
@@ -183,6 +186,8 @@ title = "Data center // EMP"
 attack = 1
 health = 1
 cost = 3
+type = 1
+faction = 1
 id = 17
 description = "None"
 
@@ -191,6 +196,8 @@ title = "Thermal plant // Microwave beam"
 attack = 1
 health = 1
 cost = 3
+type = 1
+faction = 1
 id = 18
 description = "None"
 
@@ -199,6 +206,8 @@ title = "Beacon//Death from above"
 attack = 1
 health = 1
 cost = 3
+type = 1
+faction = 1
 id = 19
 description = "None"
 
