@@ -283,4 +283,5 @@ title = "Solar panel//Solar flare"
 cost = 3
 type = 1
 faction = 2
+id = 29
 description = "Slowly generates energy"
