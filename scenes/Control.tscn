@@ -19,30 +19,6 @@ bus = &"SFX"
 
 [node name="CardsPrototypeContainer" type="Node" parent="."]
 
-[node name="Felix" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Felix"
-cost = 3
-type = 1
-description = "Yé beau"
-
-[node name="Will" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Will"
-cost = 2
-type = 2
-faction = 1
-id = 1
-description = "Yé presque portugais"
-
-[node name="Gab" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Gab"
-attack = 3
-health = 3
-attack_range = 1
-cost = 6
-faction = 2
-id = 2
-description = "Yé chevelu"
-
 [node name="Bob-omb" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "Bob-omb"
 health = 1
@@ -255,11 +231,12 @@ faction = 2
 id = 24
 description = "None"
 
-[node name="Neutral5" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Pest"
+[node name="Clockwork pups" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Clockwork pups"
 attack = 1
 health = 1
 cost = 3
+faction = 2
 id = 25
 description = "None"
 

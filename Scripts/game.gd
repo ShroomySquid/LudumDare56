@@ -3,9 +3,13 @@ extends Node2D
 @onready var is_paused := false
 @onready var settings_on := false
 @onready var mob = preload("res://scenes/test_mob.tscn")
+@onready var building = preload("res://scenes/test_building.tscn")
 @onready var map = $SingleLane
 @onready var creature_container = $CreatureContainer
+@onready var building_container = $BuildingContainer
 @onready var mob_id := 0
+@onready var building_id := 0
+@onready var building_slots := [true, true, true, true, true, true, true, true, true, true, true]
 
 func _ready():
 	$CanvasLayer/MenuContainer.hide()
@@ -52,6 +56,8 @@ func _on_creature_spawn_timer_timeout():
 	if (mob_id < 6):
 		_spawn_creature(true)
 		_spawn_creature(false)
+		_spawn_building(true)
+		_spawn_building(false)
 	
 func _spawn_creature(_is_player_mob):
 	var new_mob = mob.instantiate()
@@ -69,6 +75,28 @@ func _spawn_creature(_is_player_mob):
 		new_mob.target = map.player_spawn_point
 		new_mob.is_player_mob = false
 	new_mob.make_path()
+
+func _spawn_building(_is_player_mob):
+	var new_building = building.instantiate()
+	building_container.add_child(new_building)
+	new_building.id = building_id
+	building_id += 1
+	if _is_player_mob:
+		for i in 11:
+			if building_slots[i]:
+				#Check if player can build there
+				new_building.position = map.building_slots[i].position
+				new_building.is_player_mob = true
+				building_slots[i] = false
+				return
+		return
+	for i in range(10, 0, -1):
+		if building_slots[i]:
+			#check if ai can build there
+			new_building.position = map.building_slots[i].position
+			new_building.is_player_mob = false
+			building_slots[i] = false
+			return
 
 func _on_card_ui_card_effect():
 	pass # Replace with function body.

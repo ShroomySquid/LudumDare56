@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbb7x8iedogb0"]
+[gd_scene load_steps=5 format=3 uid="uid://bahplrcm8cykh"]
 
 [ext_resource type="Script" path="res://Scripts/card_hand.gd" id="1_kdiqq"]
-[ext_resource type="PackedScene" uid="uid://cuuphyhhs1jpv" path="res://scenes/deck.tscn" id="2_vicgh"]
-[ext_resource type="PackedScene" uid="uid://d3xpytexxvo37" path="res://scenes/discard_pile.tscn" id="3_kw6kb"]
-[ext_resource type="PackedScene" uid="uid://b8xf6d30x5o47" path="res://scenes/mana.tscn" id="4_66u4a"]
+[ext_resource type="PackedScene" path="res://scenes/deck.tscn" id="2_vicgh"]
+[ext_resource type="PackedScene" path="res://scenes/discard_pile.tscn" id="3_kw6kb"]
+[ext_resource type="PackedScene" path="res://scenes/mana.tscn" id="4_66u4a"]
 
 [node name="CardUI" type="Node2D"]
 script = ExtResource("1_kdiqq")

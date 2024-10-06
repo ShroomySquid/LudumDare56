@@ -7,10 +7,10 @@ extends Node2D
 
 @onready var hand = $CardHand
 @onready var hand_pos := 0
-@onready var hand_size := 5
+@onready var hand_size := 4
 
 @onready var deck = []
-@onready var deck_size := 20
+@onready var deck_size := 10
 @onready var discard_pile = []
 @onready var cards_left = $Deck.cards_left
 @onready var cards_in_discard = $DiscardPile.cards_in_discard
@@ -19,6 +19,8 @@ extends Node2D
 @onready var max_mana = 10
 @onready var current_mana_lbl = $Mana.current_mana
 @onready var restore_mana_ready = true
+
+const starter_deck = [24, 24, 24, 24, 20, 20, 2, 2, 25, 25]
 
 signal card_effect
 
@@ -31,10 +33,9 @@ func _ready():
 		create_card()
 
 func fill_deck():
-	for i in deck_size:
-		var potential_cards = GlobalControl.cards_prototype.get_children()
-		var random_card = randi() % potential_cards.size()
-		deck.append(random_card)
+	for id in starter_deck:
+		deck.append(id)
+	deck.shuffle()
 
 func create_card():
 	var new_card = card_node.instantiate()
