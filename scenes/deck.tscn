@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuuphyhhs1jpv"]
+
+[ext_resource type="Script" path="res://Scripts/deck.gd" id="1_brnsq"]
+[ext_resource type="Texture2D" uid="uid://c5rkjfxbjmkdp" path="res://Images/blue.jpg" id="2_hqhk3"]
+
+[node name="Deck" type="Node2D"]
+script = ExtResource("1_brnsq")
+
+[node name="DeckImg" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0.999998)
+scale = Vector2(0.135008, 0.166667)
+texture = ExtResource("2_hqhk3")
+
+[node name="CardsLeft" type="Label" parent="."]
+offset_left = -11.0
+offset_top = -12.0
+offset_right = 29.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 20
+text = "10"
