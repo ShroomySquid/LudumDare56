@@ -11,7 +11,7 @@ var is_facing_down: bool = false
 var is_ennemy: bool = false
 
 # Creature ressources
-@onready var card_stats = GlobalControl.cards_prototype.get_children()[3]
+@onready var card_stats = GlobalControl.cards_prototype.get_children()[0]
 
 @onready var health = card_stats.health
 
@@ -33,8 +33,18 @@ func _ready():
 	bar.max_value = health
 	bar.value = health
 	label.text = card_stats.title
+	
+	#var style_fg = StyleBoxFlat.new()
+	#style_fg.bg_color = Color(1, 0, 0)  # Set color to red
+	#var style_bg = StyleBoxFlat.new()
+	#style_bg.bg_color = Color(0.5, 0.5, 0.5)  # Set color to gray
+	#bar.theme_stylebox_override("fg", style_fg)  # Foreground (filled part)
+	#bar.theme_stylebox_override("bg", style_bg)  # Background (empty part)
 	#label.bbcode_enabled = true
-
+	#bar.set_modulate(Color.DARK_RED)
+	
+	var stylebox = bar.get("theme_override_styles/fill")
+	stylebox.bg_color.h = lerp(0.0, 0.3, health / 100)
 	#print("health: ", card_stats.health)
 	pass
 	

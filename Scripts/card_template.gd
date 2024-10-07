@@ -10,6 +10,7 @@ extends ResourcePreloader
 @export var texture: Texture
 @export var id: int
 @export var description: String
+@export var flip_index := -1
 
 enum Type {
 	CREATURE,
