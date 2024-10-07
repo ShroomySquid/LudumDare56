@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	global_position = get_global_mouse_position()
 	if Input.is_action_just_pressed("LeftClick"):
 		for i in targets:

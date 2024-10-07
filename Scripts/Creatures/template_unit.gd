@@ -22,9 +22,11 @@ func _physics_process(delta: float):
 	move_and_slide()
 
 func is_ennemy_in_range():
-	#var distance = position.distance_to(target.position)
-	#if distance > attack_range:
-	return false
+	if not is_instance_valid(target):
+		return false
+	var distance = position.distance_to(target.position)
+	if distance > attack_range:
+		return false
 	return true
 
 func make_path():

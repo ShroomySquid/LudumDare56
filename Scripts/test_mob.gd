@@ -19,7 +19,7 @@ extends CharacterBody2D
 var potential_targets = []
 var id : int
 
-signal attack
+#signal attack
 
 func _ready():
 	pass

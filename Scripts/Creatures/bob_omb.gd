@@ -1,8 +1,8 @@
 extends Node2D  # Parent node
 
 # Signal
-signal creature_killed 
-signal deals_damage
+#signal creature_killed 
+#signal deals_damage
 
 # Creature settings
 var is_walking: bool = false

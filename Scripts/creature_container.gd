@@ -42,13 +42,13 @@ func _on_card_played(id: int, player: bool):
 	
 		
 # Function to spawn a creature
-func spawn_creature(creature_type: CreatureType, position: Vector2):	
+func spawn_creature(creature_type: CreatureType, _position: Vector2):	
 	if	creature_type in creature_scenes:	
 		var creature_instance = creature_scenes[creature_type].instantiate()
 		add_child(creature_instance)
 		
 		#Set position of the creature relative to map
-		creature_instance.position = position
+		creature_instance.position = _position
 		
 		# Add the creature to the array
 		#summoned_creatures.append(creature_instance)
@@ -57,7 +57,7 @@ func spawn_creature(creature_type: CreatureType, position: Vector2):
 		print("Creature type not found: ", creature_type)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_pressed("M"):	
 		spawn_creature(CreatureType.CreatureA, position) #TODO: change to position of base
 	#nb_units = summoned_creatures.size()
@@ -72,7 +72,3 @@ func _on_creature_killed(creature_instance):
 	creature_instance.queue_free()
 	#print("Units on map: ", nb_units)
 	#print("Creature killed and removed from tracking.") #DEBUG
-
-
-func _on_card_ui_card_effect() -> void:
-	pass # Replace with function body.
