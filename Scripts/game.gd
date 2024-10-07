@@ -82,21 +82,23 @@ func _spawn_building(_is_player_mob):
 	new_building.id = building_id
 	building_id += 1
 	if _is_player_mob:
-		for i in 11:
+		for i in 3:
 			if building_slots[i]:
 				#Check if player can build there
 				new_building.position = map.building_slots[i].position
 				new_building.is_player_mob = true
 				building_slots[i] = false
 				return
+		print("Player can't build")
 		return
-	for i in range(10, 0, -1):
+	for i in range(10, 7, -1):
 		if building_slots[i]:
 			#check if ai can build there
 			new_building.position = map.building_slots[i].position
 			new_building.is_player_mob = false
 			building_slots[i] = false
 			return
+	print("AI can't build")
 
 func _on_card_ui_card_effect(_card):
 	print("has been played: ", _card.title)
