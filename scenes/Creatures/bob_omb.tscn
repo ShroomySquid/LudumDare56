@@ -71,7 +71,7 @@ radius = 2.0
 [sub_resource type="Theme" id="Theme_piv55"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ciks5"]
-bg_color = Color(0.891291, 4.18738e-06, 8.66354e-07, 1)
+bg_color = Color(0, 0.560784, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -151,6 +151,5 @@ theme = SubResource("Theme_piv55")
 theme_override_styles/background = SubResource("StyleBoxFlat_ciks5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_o0qkd")
 max_value = 10.0
-value = 1.0
 fill_mode = 1
 show_percentage = false

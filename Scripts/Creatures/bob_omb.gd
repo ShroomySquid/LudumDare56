@@ -34,6 +34,8 @@ func _ready():
 	bar.value = health
 	label.text = card_stats.title
 	
+	#green code: 008f00
+	#red code: e30000
 	#var style_fg = StyleBoxFlat.new()
 	#style_fg.bg_color = Color(1, 0, 0)  # Set color to red
 	#var style_bg = StyleBoxFlat.new()
@@ -43,8 +45,6 @@ func _ready():
 	#label.bbcode_enabled = true
 	#bar.set_modulate(Color.DARK_RED)
 	
-	var stylebox = bar.get("theme_override_styles/fill")
-	stylebox.bg_color.h = lerp(0.0, 0.3, health / 100)
 	#print("health: ", card_stats.health)
 	pass
 	
@@ -78,6 +78,8 @@ func attack():
 	is_attacking = true
 	$AnimatedSprite2D.play("attack")
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
+	health -= health
+	update_health()
 	timer.start()
 	await timer.timeout
 	$AudioStreamPlayer2D.play()

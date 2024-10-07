@@ -64,31 +64,30 @@ id = 6
 description = "Attack + 5 if hitting an overheated unit."
 
 [node name="Scrap Factory __ Surprise!" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Scrap Factory // Surprise!"
+title = "Scrap Factory"
 attack = 1
 health = 1
 cost = 3
 type = 1
 id = 7
 description = "None"
+flip_index = 30
 
-[node name="Thermal plant __ Microwave beam" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Thermal plant // Microwave beam"
-attack = 1
-health = 1
+[node name="Thermal plant2" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Thermal plant"
 cost = 3
 type = 1
 id = 8
 description = "None"
 
-[node name="Reactor__Heatsink" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Reactor//Heatsink"
-attack = 1
-health = 1
+[node name="Reactor" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Reactor"
+health = 2
 cost = 3
 type = 1
 id = 9
 description = "None"
+flip_index = 32
 
 [node name="Pest" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "Pest"
@@ -146,28 +145,26 @@ faction = 1
 id = 16
 description = "This unit gets +1/+1 for every allied alien unit."
 
-[node name="Data center_EMP" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Data center // EMP"
-attack = 1
-health = 1
+[node name="Data center" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Data center"
 cost = 3
 type = 1
 faction = 1
 id = 17
 description = "None"
+flip_index = 33
 
-[node name="Thermal plant__Microwave beam" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Thermal plant // Microwave beam"
-attack = 1
-health = 1
+[node name="Companion factory" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Companion factorywave beam"
 cost = 3
 type = 1
 faction = 1
 id = 18
 description = "None"
+flip_index = 34
 
-[node name="Beacon__Death from above" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
-title = "Beacon//Death from above"
+[node name="Beacon" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Beacon"
 attack = 1
 health = 1
 cost = 3
@@ -175,6 +172,7 @@ type = 1
 faction = 1
 id = 19
 description = "None"
+flip_index = 35
 
 [node name="Colossal Dreadmaw" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
 title = "Colossal Dreadmaw"
@@ -260,3 +258,54 @@ type = 1
 faction = 2
 id = 29
 description = "Slowly generates energy"
+
+[node name="Surprise!" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Surprise!"
+cost = 2
+type = 2
+id = 30
+description = "Slowly generates energy"
+flip_index = 7
+
+[node name="Microwave beam" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Microwave beam"
+cost = 4
+type = 2
+id = 31
+description = "Slowly generates energy"
+flip_index = 8
+
+[node name="Heatsink" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Heatsink"
+cost = 3
+type = 2
+id = 32
+description = "Slowly generates energy"
+flip_index = 9
+
+[node name="EMP" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "EMP"
+cost = 3
+type = 2
+faction = 1
+id = 33
+description = "Slowly generates energy"
+flip_index = 17
+
+[node name="Collect Data" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Colect Data"
+cost = 1
+type = 2
+faction = 1
+id = 34
+description = "Slowly generates energy"
+flip_index = 18
+
+[node name="Death from above" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
+title = "Death from above"
+cost = 5
+type = 2
+faction = 1
+id = 35
+description = "Slowly generates energy"
+flip_index = 19
