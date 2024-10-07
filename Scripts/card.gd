@@ -6,6 +6,7 @@ extends Node2D
 @onready var image = $Image
 @onready var card = Node2D
 @onready var flip_btn = $FlipBtn
+@onready var in_deck_editor := false
 
 signal card_activated
 
@@ -32,15 +33,17 @@ func set_hand_pos(_hand_pos):
 	hand_pos = _hand_pos
 
 func _process(_delta):
-	if mouse_hover && scale.x < 1.1:
+	if mouse_hover && scale.x < 1.1 && Engine.time_scale != 0:
 		await get_tree().create_timer(0.01).timeout
-		position.y -= 15
+		if not in_deck_editor:
+			position.y -= 15
 		scale += Vector2(0.02, 0.02)
 	elif not mouse_hover && scale.x > 1:
 		await get_tree().create_timer(0.01).timeout
-		position.y += 15
+		if not in_deck_editor:
+			position.y += 15
 		scale -= Vector2(0.02, 0.02)
-	if Input.is_action_just_pressed("LeftClick") && mouse_hover:
+	if Input.is_action_just_pressed("LeftClick") && mouse_hover && Engine.time_scale != 0:
 		card_activated.emit(hand_pos)
 
 func _on_mouse_hover_mouse_entered():

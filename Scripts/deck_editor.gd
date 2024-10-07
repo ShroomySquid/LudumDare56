@@ -39,6 +39,7 @@ func switch():
 func create_card(i: int, pile):
 	var new_card = card_node.instantiate()
 	$CardContainer.add_child(new_card)
+	new_card.in_deck_editor = true
 	new_card.position = start.position
 	new_card.position.x += position_decay
 	position_decay += 175
