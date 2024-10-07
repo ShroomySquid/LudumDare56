@@ -133,10 +133,14 @@ func _on_lose_btn_pressed():
 	menu.hide()
 	end_menu.end_msg.text = "You've lost, nub"
 	end_menu.retry_btn.text = "Try again"
+	GlobalControl.deck = []
+	GlobalControl.deck.append_array(GlobalControl.const_deck)
 	end_menu.show()
 
 func _on_win_btn_pressed():
 	menu.hide()
+	GlobalControl.deck = []
+	GlobalControl.deck.append_array($CanvasLayer/CardUI.starter_deck)
 	end_menu.end_msg.text = "Victory!"
 	end_menu.retry_btn.text = "Next level"
 	end_menu.victory = true
