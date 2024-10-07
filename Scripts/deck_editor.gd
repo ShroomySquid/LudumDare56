@@ -62,7 +62,6 @@ func _on_card_activated(hand_pos):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	switch()
 	pass # Replace with function body.
 
 
