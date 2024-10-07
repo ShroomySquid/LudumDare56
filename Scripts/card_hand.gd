@@ -19,6 +19,7 @@ extends Node2D
 @onready var max_mana = 10
 @onready var current_mana_lbl = $Mana.current_mana
 @onready var restore_mana_ready = true
+@onready var mana_reg_in_sec = 1.0
 
 const starter_deck = [24, 24, 24, 24, 20, 20, 2, 2, 25, 25]
 
@@ -45,7 +46,7 @@ func create_card():
 	position_decay += 175
 	new_card.hand_pos = hand_pos
 	hand_pos += 1
-	render_card(new_card)
+	render_card(new_card, false)
 	new_card.card_activated.connect(_on_card_activated)
 
 func _process(_delta):
@@ -55,7 +56,7 @@ func _process(_delta):
 func _restore_mana():
 	_update_mana(1)
 	restore_mana_ready = false
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(mana_reg_in_sec).timeout
 	restore_mana_ready = true
 
 func _update_mana(value):
@@ -68,19 +69,19 @@ func _on_card_activated(_hand_pos):
 	var cards_in_hand = hand.get_children()
 	for i in cards_in_hand:
 		if i.hand_pos == _hand_pos:
-			if card_list[i.id].cost <= current_mana:
+			if i.card.cost <= current_mana:
 				i.hide()
-				_update_mana(card_list[i.id].cost * -1)
-				render_card(i)
-				card_effect.emit(card_list[i.id])
+				_update_mana(i.card.cost * -1)
+				card_effect.emit(i.card)
+				render_card(i, true)
 			else:
-				print("nope")
+				print("canoot play card")
 
-func render_card(card):
-	if not card.id == -1:
-		discard_pile.append(card.id)
+func render_card(card, to_discard):
+	if to_discard:
+		discard_pile.append(card.card.id)
 	var top_card = card_list[deck[0]]
-	card.set_values(top_card.cost, top_card.title, top_card.description, top_card.texture, deck[0])
+	card.set_values(top_card)
 	await get_tree().create_timer(0.5).timeout
 	card.show()
 	deck.remove_at(0)
