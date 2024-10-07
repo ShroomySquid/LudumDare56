@@ -58,12 +58,18 @@ func _on_card_activated(hand_pos):
 		booster.remove_at(hand_pos)
 	else:
 		deck[hand_pos] = selected
-		edit_done.emit(deck)
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		return
 	switch()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	deck = GlobalControl.deck
+	deck.sort()
+	booster = []
+	for i in 5:
+		booster.append(randi_range(0, 29))
+	switch()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/start_screen.gd" id="1_cklc5"]
 [ext_resource type="PackedScene" uid="uid://bwrhsav1b6hkf" path="res://scenes/settings.tscn" id="2_20652"]
-[ext_resource type="AudioStream" uid="uid://5nqgcfdh8lda" path="res://Sound&Music/Music/little mech tower defense main menu.mp3" id="2_scws4"]
+[ext_resource type="AudioStream" uid="uid://dd7ygwp6gn6h5" path="res://Sound&Music/Music/little mech tower defense main menu.mp3" id="2_scws4"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
