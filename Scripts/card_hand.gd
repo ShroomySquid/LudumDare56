@@ -21,7 +21,7 @@ extends Node2D
 @onready var restore_mana_ready = true
 @onready var mana_reg_in_sec = 1.0
 
-const starter_deck = [24, 24, 24, 24, 20, 20, 2, 2, 25, 25]
+@onready var starter_deck = []
 
 signal card_effect
 
@@ -34,8 +34,9 @@ func _ready():
 		create_card()
 
 func fill_deck():
-	for id in starter_deck:
-		deck.append(id)
+	
+	starter_deck.append_array(GlobalControl.deck)
+	deck.append_array(starter_deck)
 	deck.shuffle()
 
 func create_card():
