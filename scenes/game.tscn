@@ -19,7 +19,7 @@ script = ExtResource("2_47ctw")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CardUI" parent="CanvasLayer" instance=ExtResource("4_okrk5")]
-position = Vector2(1, 65)
+position = Vector2(-1, 150)
 
 [node name="PauseBtn" type="Button" parent="CanvasLayer"]
 offset_right = 53.0

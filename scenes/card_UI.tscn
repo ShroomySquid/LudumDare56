@@ -14,10 +14,10 @@ position = Vector2(218, 413)
 [node name="CardHand" type="Node2D" parent="."]
 
 [node name="Deck" parent="." instance=ExtResource("2_vicgh")]
-position = Vector2(66, 424)
+position = Vector2(71, 353)
 
 [node name="DiscardPile" parent="." instance=ExtResource("3_kw6kb")]
-position = Vector2(67, 551)
+position = Vector2(71, 435)
 
 [node name="Mana" parent="." instance=ExtResource("4_66u4a")]
-position = Vector2(1061, 530)
+position = Vector2(1043, 406)
