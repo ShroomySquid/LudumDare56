@@ -76,7 +76,7 @@ func _on_card_activated(_hand_pos):
 				card_effect.emit(i.card)
 				render_card(i, true)
 			else:
-				print("canoot play card")
+				print("cannot play card")
 
 func render_card(card, to_discard):
 	if to_discard:

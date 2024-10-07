@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dlsmn8ey3q0rp" path="res://Images/Placeholder_tileset.png" id="1_tqlm4"]
 [ext_resource type="Script" path="res://Scripts/single_lane.gd" id="2_bsmyo"]
-[ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="3_747ft"]
+[ext_resource type="PackedScene" uid="uid://c88pvnreivhm0" path="res://scenes/checkpoint.tscn" id="3_747ft"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_w2d7j"]
 vertices = PackedVector2Array(15, 0, 0, 7.5, -15, 0, 0, -7.5)

@@ -20,10 +20,15 @@ extends Node2D
 @onready var settings = $CanvasLayer/Settings
 @onready var program_container = $ProgramContainer
 
+# To send locations to Creature container
+@onready var player_spawn_point = $SingleLane.player_spawn_point
+@onready var ai_spawn_point = $SingleLane.ai_spawn_point
 func _ready():
 	menu.hide()
 	settings.hide()
 	game_music.play()
+	
+	$CreatureContainer.set_positions(player_spawn_point.position, ai_spawn_point.position)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("esc") && not settings_on:
