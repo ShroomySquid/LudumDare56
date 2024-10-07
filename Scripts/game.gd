@@ -99,4 +99,5 @@ func _spawn_building(_is_player_mob):
 			return
 
 func _on_card_ui_card_effect(_card):
+	
 	print("has been played: ", _card.title)
