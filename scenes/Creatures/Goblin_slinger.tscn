@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvpfdinf7a7ai"]
+
+[ext_resource type="PackedScene" uid="uid://dmemlf0qfk5rr" path="res://scenes/test_mob.tscn" id="1_x1213"]
+
+[node name="Retriever" instance=ExtResource("1_x1213")]
+health = 2

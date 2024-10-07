@@ -75,6 +75,7 @@ func _on_creature_spawn_timer_timeout():
 		_spawn_building(false)
 	
 func _spawn_creature(_is_player_mob, attack_range):
+	return false #for test
 	var new_mob = mob.instantiate()
 	creature_container.add_child(new_mob)
 	new_mob.attack_range = attack_range
