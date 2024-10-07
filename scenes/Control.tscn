@@ -264,7 +264,7 @@ title = "Surprise!"
 cost = 2
 type = 2
 id = 30
-description = "Slowly generates energy"
+description = "Transform decoy in bob-ombs"
 flip_index = 7
 
 [node name="Microwave beam" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
@@ -272,7 +272,7 @@ title = "Microwave beam"
 cost = 4
 type = 2
 id = 31
-description = "Slowly generates energy"
+description = "Apply heat 3 to all units in the area"
 flip_index = 8
 
 [node name="Heatsink" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]

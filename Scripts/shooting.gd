@@ -9,12 +9,14 @@ func _ready():
 func _process(delta):
 	pass
 
-func shoot(damage: int, target):
+func shoot(damage: int, target, texture):
 	var new_projectile = projectile.instantiate()
 	projectile.add_child(new_projectile)
 	new_projectile.damage = damage
 	new_projectile.set_target(target)
 	new_projectile.target_touched.connect(_hit)
+	if texture:
+		new_projectile.sprite.texture = texture
 
 func _hit(damage, target):
 	#target.hp -= damage

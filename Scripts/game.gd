@@ -5,6 +5,7 @@ extends Node2D
 
 @onready var mob = preload("res://scenes/test_mob.tscn")
 @onready var building = preload("res://scenes/test_building.tscn")
+@onready var microwave_beam = preload("res://scenes/microwave_beam.tscn")
 
 @onready var building_container = $BuildingContainer
 @onready var mob_id := 0
@@ -17,6 +18,7 @@ extends Node2D
 @onready var creature_container = $CreatureContainer
 @onready var menu = $CanvasLayer/MenuContainer
 @onready var settings = $CanvasLayer/Settings
+@onready var program_container = $ProgramContainer
 
 func _ready():
 	menu.hide()
@@ -109,8 +111,23 @@ func _spawn_building(_is_player_mob):
 	print("AI can't build")
 
 func _on_card_ui_card_effect(_card):
-	
-	print("has been played: ", _card.title)
+	print(_card.type)
+	if (_card.type == 0):
+		print("has been played a creature: ", _card.title)
+	if (_card.type == 1):
+		print("has been played a building: ", _card.title)
+	if (_card.type == 2):
+		print("has been played a program: ", _card.title)
+		_cast_program(_card)
+
+func _cast_program(_card):
+	if _card.title == "Surprise!":
+		# for loop, get all decoy in creature container and turn them into bob-ombs
+		pass
+	if _card.title == "Microwave beam":
+		var new_microwave = microwave_beam.instantiate()
+		program_container.add_child(new_microwave)
+	pass
 
 func _on_lose_btn_pressed():
 	menu.hide()

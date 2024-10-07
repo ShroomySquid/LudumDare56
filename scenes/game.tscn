@@ -94,6 +94,8 @@ z_as_relative = false
 [node name="CreatureSpawnTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="ProgramContainer" type="Node2D" parent="."]
+
 [connection signal="card_effect" from="CanvasLayer/CardUI" to="." method="_on_card_ui_card_effect"]
 [connection signal="pressed" from="CanvasLayer/PauseBtn" to="." method="_on_pause_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuContainer/SettingBtn" to="." method="_on_setting_btn_pressed"]

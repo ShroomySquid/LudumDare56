@@ -5,6 +5,7 @@ const SPEED = 12000.0
 @onready var nav_agent = $NavigationAgent2D
 @onready var damage := 1
 @onready var target = Node2D
+@onready var sprite = $ProjectileSprite
 
 signal target_touched
 
