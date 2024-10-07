@@ -64,14 +64,15 @@ func _on_quit_pressed():
 
 func _on_creature_spawn_timer_timeout():
 	if (mob_id < 6):
-		_spawn_creature(true)
-		_spawn_creature(false)
+		_spawn_creature(true, 25)
+		_spawn_creature(false, 25)
 		_spawn_building(true)
 		_spawn_building(false)
 	
-func _spawn_creature(_is_player_mob):
+func _spawn_creature(_is_player_mob, attack_range):
 	var new_mob = mob.instantiate()
 	creature_container.add_child(new_mob)
+	new_mob.attack_range = attack_range
 	new_mob.id = mob_id
 	mob_id += 1
 	if _is_player_mob:
@@ -111,14 +112,14 @@ func _spawn_building(_is_player_mob):
 	print("AI can't build")
 
 func _on_card_ui_card_effect(_card):
-	print(_card.type)
+	_spawn_creature(true, 300)
 	if (_card.type == 0):
 		print("has been played a creature: ", _card.title)
 	if (_card.type == 1):
 		print("has been played a building: ", _card.title)
 	if (_card.type == 2):
 		print("has been played a program: ", _card.title)
-		_cast_program(_card)
+		#_cast_program(_card)
 
 func _cast_program(_card):
 	if _card.title == "Surprise!":

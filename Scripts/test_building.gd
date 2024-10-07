@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var target: Node2D
 @onready var is_player_mob = true
 @onready var attack_range = 100
+@onready var health = 100
 var potential_targets = []
 var id : int
 
@@ -25,3 +26,7 @@ func _on_check_target_timeout():
 		target = potential_targets[0]
 	else:
 		target = null
+
+func take_hit(damage_taken : int):
+	print("building getting hit")
+	health -= damage_taken

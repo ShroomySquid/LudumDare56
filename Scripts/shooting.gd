@@ -6,12 +6,12 @@ extends Node2D
 func _ready():
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func shoot(damage: int, target, texture):
 	var new_projectile = projectile.instantiate()
-	projectile.add_child(new_projectile)
+	projectile_container.add_child(new_projectile)
 	new_projectile.damage = damage
 	new_projectile.set_target(target)
 	new_projectile.target_touched.connect(_hit)
@@ -19,5 +19,8 @@ func shoot(damage: int, target, texture):
 		new_projectile.sprite.texture = texture
 
 func _hit(damage, target):
-	#target.hp -= damage
-	print("yo")
+	if not is_instance_valid(target):
+		return
+	target.health -= damage
+	if (target.health <= 0):
+		target.queue_free()
