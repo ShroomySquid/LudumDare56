@@ -10,10 +10,12 @@ extends Node2D
 @onready var mob_id := 0
 @onready var building_id := 0
 @onready var building_slots := [true, true, true, true, true, true, true, true, true, true, true]
+@onready var game_music = $GameMusic
 
 func _ready():
 	$CanvasLayer/MenuContainer.hide()
 	$CanvasLayer/Settings.hide()
+	game_music.play()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("esc") && not settings_on:

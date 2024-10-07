@@ -10,8 +10,6 @@ func _ready():
 
 func _process(_delta):
 	pass
-	#if Input.is_action_just_pressed("RightClick"):
-	#	$SFXtest.play()
 
 func change_volume(bus, value):
 	AudioServer.set_bus_volume_db(bus, value - 40)

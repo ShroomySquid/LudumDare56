@@ -1,21 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlyvi51d1hw1h"]
+[gd_scene load_steps=3 format=3 uid="uid://dlyvi51d1hw1h"]
 
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_xyxub"]
-[ext_resource type="AudioStream" uid="uid://dk4dixgksotjc" path="res://Sound&Music/Le Reel Irlandais ou Bees Wax, Skin Sheep.mp3" id="2_8usk6"]
-[ext_resource type="AudioStream" uid="uid://dkh644yviqjn" path="res://Sound&Music/dmg.wav" id="2_8wav4"]
 [ext_resource type="PackedScene" uid="uid://dalaxeyeyg2ke" path="res://scenes/card_template.tscn" id="4_hq2qk"]
 
 [node name="Control" type="Node2D"]
 script = ExtResource("1_xyxub")
-
-[node name="MusicStream" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_8usk6")
-autoplay = true
-bus = &"Music"
-
-[node name="SFXtest" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_8wav4")
-bus = &"SFX"
 
 [node name="CardsPrototypeContainer" type="Node" parent="."]
 
