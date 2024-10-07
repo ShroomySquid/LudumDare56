@@ -48,7 +48,7 @@ func create_card(i: int, pile):
 		new_card.position.y += 275
 	new_card.hand_pos = i
 	var top_card = card_list[pile[i]]
-	new_card.set_values(top_card.cost, top_card.title, top_card.description, top_card.texture, pile[i])
+	new_card.set_values(top_card)
 	new_card.card_activated.connect(_on_card_activated)
 
 func _on_card_activated(hand_pos):
