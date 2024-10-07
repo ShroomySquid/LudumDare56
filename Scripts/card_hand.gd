@@ -82,9 +82,9 @@ func render_card(card, to_discard):
 		discard_pile.append(card.card.id)
 	var top_card = card_list[deck[0]]
 	card.set_values(top_card)
+	deck.remove_at(0)
 	await get_tree().create_timer(0.5).timeout
 	card.show()
-	deck.remove_at(0)
 	if not deck.size():
 		reshuffle()
 	cards_left.text = str(deck.size())

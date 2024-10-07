@@ -92,6 +92,7 @@ M={
 2d_navigation/layer_1="road"
 2d_physics/layer_2="Terrain"
 2d_physics/layer_3="Buildings"
+2d_physics/layer_4="Projectile"
 
 [rendering]
 
