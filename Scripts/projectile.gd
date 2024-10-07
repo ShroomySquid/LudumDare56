@@ -6,6 +6,8 @@ const SPEED = 10000.0
 @onready var damage := 1
 @onready var target = Node2D
 
+signal target_touched
+
 func _ready():
 	pass
 
@@ -20,5 +22,8 @@ func set_target(new_target):
 
 func _on_touch_area_body_entered(body):
 	if body == target:
-		print("touch")
+		target_touched.emit(damage)
 		queue_free()
+
+func _on_path_timer_timeout():
+	nav_agent.target_position = target.global_position

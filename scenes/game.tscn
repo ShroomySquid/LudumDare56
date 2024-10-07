@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cubm8ayprtkdv"]
+[gd_scene load_steps=9 format=3 uid="uid://cubm8ayprtkdv"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_6a6vw"]
 [ext_resource type="PackedScene" uid="uid://bwrhsav1b6hkf" path="res://scenes/settings.tscn" id="2_2jvls"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bahplrcm8cykh" path="res://scenes/card_UI.tscn" id="4_okrk5"]
 [ext_resource type="PackedScene" uid="uid://dwyof0b6x23yt" path="res://scenes/single_lane.tscn" id="5_1xc44"]
 [ext_resource type="Script" path="res://Scripts/creature_container.gd" id="6_dokwc"]
+[ext_resource type="PackedScene" uid="uid://dk2i2fhoh7jq0" path="res://scenes/end_menu.tscn" id="6_sg52i"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -59,12 +60,23 @@ text = "Resume"
 layout_mode = 2
 text = "Quit"
 
+[node name="LoseBtn" type="Button" parent="CanvasLayer/MenuContainer"]
+layout_mode = 2
+text = "Lose Button"
+
+[node name="WinBtn" type="Button" parent="CanvasLayer/MenuContainer"]
+layout_mode = 2
+text = "Win Button"
+
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("2_2jvls")]
 visible = false
 offset_left = 362.0
 offset_top = 276.0
 offset_right = -399.0
 offset_bottom = -185.0
+
+[node name="EndMenu" parent="CanvasLayer" instance=ExtResource("6_sg52i")]
+visible = false
 
 [node name="SingleLane" parent="." instance=ExtResource("5_1xc44")]
 
@@ -87,5 +99,7 @@ autostart = true
 [connection signal="pressed" from="CanvasLayer/MenuContainer/SettingBtn" to="." method="_on_setting_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuContainer/LoseBtn" to="." method="_on_lose_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuContainer/WinBtn" to="." method="_on_win_btn_pressed"]
 [connection signal="exit_settings" from="CanvasLayer/Settings" to="." method="_on_settings_exit_settings"]
 [connection signal="timeout" from="CreatureSpawnTimer" to="." method="_on_creature_spawn_timer_timeout"]
