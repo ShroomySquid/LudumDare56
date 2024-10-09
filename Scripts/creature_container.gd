@@ -6,26 +6,15 @@ extends Node2D
 var player_spawn_point
 var ai_spawn_point
 
-enum CreatureID {CreatureA, CreatureB, CreatureC }
+#enum CreatureID {CreatureA, CreatureB, CreatureC }
 
 # Creature assets
 var creature_scenes = [
 	preload("res://scenes/Creatures/bob_omb.tscn"),
 	preload("res://scenes/Creatures/fire_fist.tscn"),
 	preload("res://scenes/Creatures/retriever.tscn"),
-	preload("res://scenes/Creatures/Goblin_slinger.tscn"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
-	preload("res://scenes/Creatures/"),
+	preload("res://scenes/Creatures/Goblin_slinger.tscn")
+	#preload("res://scenes/Creatures/"),
 ]
 
 
@@ -60,9 +49,9 @@ func _on_card_played(_card, player: bool):
 	
 		
 # Function to spawn a creature
-func spawn_creature(creature_type: CreatureType, position: Vector2):	
-	if	creature_type in creature_scenes:	
-		var creature_instance = creature_scenes[creature_type].instantiate()
+func spawn_creature(_card, position: Vector2):	
+	if	_card in card_list:	
+		var creature_instance = creature_scenes[_card.id].instantiate()
 		add_child(creature_instance)
 		
 		#Set position of the creature relative to map
@@ -71,13 +60,13 @@ func spawn_creature(creature_type: CreatureType, position: Vector2):
 		# Add the creature to the array
 		#summoned_creatures.append(creature_instance)
 		return creature_instance
-	else:
-		print("Creature type not found: ", creature_type)
+	#else:
+	#	print("Creature type not found: ", _card.type)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("M"):	
-		spawn_creature(CreatureType.CreatureA, position) #TODO: change to position of base
+	#if Input.is_action_pressed("M"):	DEBUG
+		#spawn_creature(0, position) #TODO: change to position of base
 	#nb_units = summoned_creatures.size()
 	pass
 	
