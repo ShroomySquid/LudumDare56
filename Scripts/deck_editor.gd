@@ -11,7 +11,7 @@ extends Node2D
 @onready var booster = [15, 16, 17, 18]
 @onready var selected = 0
 
-signal edit_done
+#signal edit_done
 
 func _render_deck():
 	for i in deck.size():
@@ -73,5 +73,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

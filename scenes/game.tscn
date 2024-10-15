@@ -69,11 +69,10 @@ layout_mode = 2
 text = "Win Button"
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("2_2jvls")]
-visible = false
-offset_left = 362.0
-offset_top = 276.0
-offset_right = -399.0
-offset_bottom = -185.0
+offset_left = 201.0
+offset_top = 193.0
+offset_right = -237.0
+offset_bottom = -236.0
 
 [node name="EndMenu" parent="CanvasLayer" instance=ExtResource("6_sg52i")]
 visible = false
