@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cklc5")
 
-[node name="LobbyMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="LobbyMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_scws4")
 bus = &"Music"
 

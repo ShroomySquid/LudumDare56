@@ -6,13 +6,6 @@
 [node name="Control" type="Node2D"]
 script = ExtResource("1_xyxub")
 
-[node name="MusicStream" type="AudioStreamPlayer2D" parent="."]
-autoplay = true
-bus = &"Music"
-
-[node name="SFXtest" type="AudioStreamPlayer2D" parent="."]
-bus = &"SFX"
-
 [node name="CardsPrototypeContainer" type="Node" parent="."]
 
 [node name="Bob-omb" parent="CardsPrototypeContainer" instance=ExtResource("4_hq2qk")]
