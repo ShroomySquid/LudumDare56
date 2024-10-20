@@ -37,7 +37,7 @@ func _on_card_played(_card, player: bool):
 		spawn_position = player_spawn_point#SingleLane.player_spawn_point
 	else:
 		spawn_position = ai_spawn_point#SingleLane.ai_spawn_point
-	var id = _card.id
+	#var id = _card.id
 	#if id >= 0 and id < card_list.size():
 	for i in range(_card.health):
 		spawn_creature(_card.type, spawn_position)
