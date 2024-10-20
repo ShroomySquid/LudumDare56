@@ -1,0 +1,311 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlyvi51d1hw1h"]
+
+[ext_resource type="Script" path="res://Scripts/Core/control.gd" id="1_fekvr"]
+[ext_resource type="PackedScene" uid="uid://dalaxeyeyg2ke" path="res://scenes/UI/card_template.tscn" id="2_7xh0q"]
+
+[node name="Control" type="Node2D"]
+script = ExtResource("1_fekvr")
+
+[node name="CardsPrototypeContainer" type="Node" parent="."]
+
+[node name="Bob-omb" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Bob-omb"
+health = 1
+attack_range = -1
+cost = 2
+description = "On death: Explode and deal (?) damage to all surrounding units"
+
+[node name="Fire-fists" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Fire-fists"
+attack = 1
+health = 3
+cost = 2
+id = 1
+description = "None"
+
+[node name="Goblin slingers" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Goblin slingers"
+attack = 2
+health = 1
+cost = 3
+id = 2
+description = "Ranged"
+
+[node name="Overclocked mech" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Overclocked mech"
+attack = 2
+health = 6
+cost = 4
+id = 3
+description = "Apply HEAT 1 to this unit whenever this unit attacks."
+
+[node name="Decoys" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Decoys"
+attack = 1
+health = 1
+cost = 3
+id = 4
+description = "Apply HEAT 1 to creatures attacking this unit"
+
+[node name="Flamer" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Flamer"
+attack = 2
+health = 2
+cost = 5
+id = 5
+description = "Attacks apply HEAT 2"
+
+[node name="Melter" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Melter"
+attack = 1
+health = 2
+cost = 4
+id = 6
+description = "Attack + 5 if hitting an overheated unit."
+
+[node name="Scrap Factory __ Surprise!" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Scrap Factory"
+attack = 1
+health = 1
+cost = 3
+type = 1
+id = 7
+description = "None"
+flip_index = 30
+
+[node name="Thermal plant2" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Thermal plant"
+cost = 3
+type = 1
+id = 8
+description = "None"
+
+[node name="Reactor" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Reactor"
+health = 2
+cost = 3
+type = 1
+id = 9
+description = "None"
+flip_index = 32
+
+[node name="Pest" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+id = 10
+description = "None"
+
+[node name="Retriever" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Retriever"
+attack = 2
+health = 2
+cost = 3
+faction = 1
+id = 11
+description = "Whenever this unit kills another unit, generate 1 energy"
+
+[node name="Relay" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Relay"
+health = 1
+cost = 3
+id = 12
+description = "Nearby allied alien units gain 1 power."
+
+[node name="Probe" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Probe"
+attack = 1
+health = 3
+cost = 2
+id = 13
+description = "When this unit hits a building, generate 2 energy."
+
+[node name="Crawler" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Crawler"
+attack = 1
+health = 1
+cost = 1
+id = 14
+description = "None"
+
+[node name="Leech" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Leech"
+attack = 2
+health = 2
+cost = 3
+faction = 1
+id = 15
+description = "Whenever this unit deals dammage, HEAL 1"
+
+[node name="The Voice" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "The Voice"
+cost = 7
+faction = 1
+id = 16
+description = "This unit gets +1/+1 for every allied alien unit."
+
+[node name="Data center" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Data center"
+cost = 3
+type = 1
+faction = 1
+id = 17
+description = "None"
+flip_index = 33
+
+[node name="Companion factory" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Companion factorywave beam"
+cost = 3
+type = 1
+faction = 1
+id = 18
+description = "None"
+flip_index = 34
+
+[node name="Beacon" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Beacon"
+attack = 1
+health = 1
+cost = 3
+type = 1
+faction = 1
+id = 19
+description = "None"
+flip_index = 35
+
+[node name="Colossal Dreadmaw" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Colossal Dreadmaw"
+attack = 3
+health = 6
+cost = 4
+faction = 2
+id = 20
+description = "None"
+
+[node name="Rats" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Rats"
+attack = 1
+health = 1
+cost = 3
+faction = 2
+id = 21
+description = "None"
+
+[node name="Energizer" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Energizer"
+health = 3
+cost = 3
+faction = 2
+id = 22
+description = "None"
+
+[node name="Demolition crew" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Demolition crew"
+attack = 2
+health = 1
+cost = 3
+faction = 2
+id = 23
+description = "Deals double damage to buildings"
+
+[node name="Knights" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Knights"
+attack = 2
+health = 2
+cost = 3
+faction = 2
+id = 24
+description = "None"
+
+[node name="Clockwork pups" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Clockwork pups"
+attack = 1
+health = 1
+cost = 3
+faction = 2
+id = 25
+description = "None"
+
+[node name="Neutral6" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+id = 26
+description = "None"
+
+[node name="Neutral7" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+id = 27
+description = "None"
+
+[node name="Neutral8" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Pest"
+attack = 1
+health = 1
+cost = 3
+id = 28
+description = "None"
+
+[node name="Solar panel __ Solar flare" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Solar panel//Solar flare"
+cost = 3
+type = 1
+faction = 2
+id = 29
+description = "Slowly generates energy"
+
+[node name="Surprise!" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Surprise!"
+cost = 2
+type = 2
+id = 30
+description = "Transform decoy in bob-ombs"
+flip_index = 7
+
+[node name="Microwave beam" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Microwave beam"
+cost = 4
+type = 2
+id = 31
+description = "Apply heat 3 to all units in the area"
+flip_index = 8
+
+[node name="Heatsink" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Heatsink"
+cost = 3
+type = 2
+id = 32
+description = "Slowly generates energy"
+flip_index = 9
+
+[node name="EMP" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "EMP"
+cost = 3
+type = 2
+faction = 1
+id = 33
+description = "Slowly generates energy"
+flip_index = 17
+
+[node name="Collect Data" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Colect Data"
+cost = 1
+type = 2
+faction = 1
+id = 34
+description = "Slowly generates energy"
+flip_index = 18
+
+[node name="Death from above" parent="CardsPrototypeContainer" instance=ExtResource("2_7xh0q")]
+title = "Death from above"
+cost = 5
+type = 2
+faction = 1
+id = 35
+description = "Slowly generates energy"
+flip_index = 19
