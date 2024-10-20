@@ -15,7 +15,7 @@ extends CharacterBody2D
 @onready var attack_speed = $AttackTimer.wait_time
 @onready var in_attack_range = false
 @onready var shoot = $Shooting
-# @onready var random_sprite = $DefaultSprite.texture
+@onready var random_sprite = $DefaultSprite.texture
 var potential_targets = []
 var id : int
 @onready var sprite = $AnimatedSprite2D

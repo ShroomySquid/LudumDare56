@@ -6,7 +6,7 @@ extends Node2D
 var player_spawn_point
 var ai_spawn_point
 
-#enum CreatureID {CreatureA, CreatureB, CreatureC }
+enum CreatureType {CreatureA, CreatureB, CreatureC }
 
 # Creature assets
 var creature_scenes = [
