@@ -6,7 +6,7 @@ extends Node2D
 var player_spawn_point
 var ai_spawn_point
 
-#enum CreatureID {CreatureA, CreatureB, CreatureC }
+enum CreatureType {CreatureA, CreatureB, CreatureC }
 
 # Creature assets
 var creature_scenes = [
@@ -49,13 +49,13 @@ func _on_card_played(_card, player: bool):
 	
 		
 # Function to spawn a creature
-func spawn_creature(_card, position: Vector2):	
-	if	_card in card_list:	
-		var creature_instance = creature_scenes[_card.id].instantiate()
+func spawn_creature(creature_type: CreatureType, _position: Vector2):	
+	if	creature_type in creature_scenes:	
+		var creature_instance = creature_scenes[creature_type].instantiate()
 		add_child(creature_instance)
 		
 		#Set position of the creature relative to map
-		creature_instance.position = position
+		creature_instance.position = _position
 		
 		# Add the creature to the array
 		#summoned_creatures.append(creature_instance)
@@ -64,9 +64,9 @@ func spawn_creature(_card, position: Vector2):
 	#	print("Creature type not found: ", _card.type)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#if Input.is_action_pressed("M"):	DEBUG
-		#spawn_creature(0, position) #TODO: change to position of base
+func _process(_delta: float) -> void:
+	if Input.is_action_pressed("M"):	
+		spawn_creature(CreatureType.CreatureA, position) #TODO: change to position of base
 	#nb_units = summoned_creatures.size()
 	pass
 	
@@ -79,8 +79,7 @@ func _on_creature_killed(creature_instance):
 	creature_instance.queue_free()
 	#print("Units on map: ", nb_units)
 	#print("Creature killed and removed from tracking.") #DEBUG
-
-
+  
 func _on_card_ui_card_effect(_card) -> void:
 	_on_card_played(_card, true)
 	pass # Replace with function body.

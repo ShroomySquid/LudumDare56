@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_6a6vw"]
 [ext_resource type="PackedScene" uid="uid://bwrhsav1b6hkf" path="res://scenes/settings.tscn" id="2_2jvls"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="2_47ctw"]
-[ext_resource type="AudioStream" uid="uid://bx5e5xmkrsnhl" path="res://Sound&Music/Music/ittle mech tower defense soundtrack.mp3" id="2_mecq3"]
+[ext_resource type="AudioStream" uid="uid://8rcgvr845uwl" path="res://Sound&Music/Music/ittle mech tower defense soundtrack.mp3" id="2_mecq3"]
 [ext_resource type="PackedScene" uid="uid://bahplrcm8cykh" path="res://scenes/card_UI.tscn" id="4_okrk5"]
 [ext_resource type="PackedScene" uid="uid://dwyof0b6x23yt" path="res://scenes/single_lane.tscn" id="5_1xc44"]
 [ext_resource type="Script" path="res://Scripts/creature_container.gd" id="6_dokwc"]

@@ -18,6 +18,7 @@ extends CharacterBody2D
 @onready var random_sprite = $DefaultSprite.texture
 var potential_targets = []
 var id : int
+@onready var sprite = $AnimatedSprite2D
 
 #signal attack
 
@@ -34,6 +35,29 @@ func _physics_process(delta: float):
 	var direction = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = direction * speed * delta * immobolize
 	move_and_slide()
+
+func load(name: String):
+	var sprite_path = "res://Images/Sprites/" + name + "/"
+	var sprite_frames = SpriteFrames.new()
+	var walk_up = [load(sprite_path + "walk_up_1.png"), load(sprite_path + "walk_up_2.png")]
+	sprite_frames.add_animation("walk_up")
+	sprite_frames.add_frame("walk_up", walk_up[0])
+	sprite_frames.add_frame("walk_up", walk_up[1])
+	var walk_down = [load(sprite_path + "walk_down_1.png"), load(sprite_path + "walk_down_2.png")]
+	sprite_frames.add_animation("walk_down")
+	sprite_frames.add_frame("walk_down", walk_down[0])
+	sprite_frames.add_frame("walk_down", walk_down[1])
+	# var idle_up = [load(sprite_path + "idle_up_1.png"), load(sprite_path + "idle_up_2.png")]
+	# sprite_frames.append_array(idle_up)
+	# var idle_down = [load(sprite_path + "idle_down_1.png"), load(sprite_path + "idle_down_2.png")]
+	# sprite_frames.append_array(idle_down)
+	var attack = [load(sprite_path + "attack_1.png"), load(sprite_path + "attack_2.png")]
+	sprite_frames.add_animation("attack")
+	sprite_frames.add_frame("attack", attack[0])
+	sprite_frames.add_frame("attack", attack[1])
+	sprite.set_sprite_frames(sprite_frames)
+	sprite.play("walk_down")
+
 
 func is_ennemy_in_range():
 	if not is_instance_valid(target):
