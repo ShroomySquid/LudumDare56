@@ -1,0 +1,168 @@
+[gd_scene load_steps=18 format=3 uid="uid://5vu62fbpo1yq"]
+
+[ext_resource type="Script" path="res://Scripts/Creatures/bob_omb.gd" id="1_2bxou"]
+[ext_resource type="Texture2D" uid="uid://bbyk0vagk33lp" path="res://Images/Sprites/Overclocked_mech/attack_down_1.png" id="2_ne7xw"]
+[ext_resource type="Texture2D" uid="uid://cuh2jrjyw586j" path="res://Images/Sprites/Overclocked_mech/attack_down_2.png" id="3_h62tq"]
+[ext_resource type="Texture2D" uid="uid://dyowhxkp6ttkh" path="res://Images/Sprites/Overclocked_mech/attack_up_1.png" id="4_5dn60"]
+[ext_resource type="Texture2D" uid="uid://bd1235nyp0nqo" path="res://Images/Sprites/Overclocked_mech/attack_up_2.png" id="5_bpawb"]
+[ext_resource type="Texture2D" uid="uid://d1yu8s1fyrj6p" path="res://Images/Sprites/Overclocked_mech/walk_down_1.png" id="6_dlmvy"]
+[ext_resource type="Texture2D" uid="uid://bgaqcmi2is064" path="res://Images/Sprites/Overclocked_mech/walk_up_1.png" id="7_m00l2"]
+[ext_resource type="AudioStream" uid="uid://b53gru5hmafbq" path="res://Sound&Music/Creatures/Bob_omb/-16 bomb.mp3" id="8_5osde"]
+[ext_resource type="Texture2D" uid="uid://b1ynrmhenm63u" path="res://Images/Sprites/Overclocked_mech/walk_down_2.png" id="8_sc3br"]
+[ext_resource type="FontFile" uid="uid://b1fdeno0huvw8" path="res://Font/PressStart2P.ttf" id="9_2jv1r"]
+[ext_resource type="Texture2D" uid="uid://bt0fvh7hqnqmt" path="res://Images/Sprites/Overclocked_mech/walk_up_2.png" id="9_x11mj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obp3y"]
+radius = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2q7ib"]
+animations = [{
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("2_ne7xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h62tq")
+}],
+"loop": true,
+"name": &"attack_down",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.7,
+"texture": ExtResource("4_5dn60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bpawb")
+}],
+"loop": true,
+"name": &"attack_up",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dlmvy")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_m00l2")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dlmvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sc3br")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_m00l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x11mj")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ki6wf"]
+radius = 2.0
+
+[sub_resource type="Theme" id="Theme_piv55"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ciks5"]
+bg_color = Color(0, 0.560784, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0qkd"]
+bg_color = Color(0, 0.560784, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[node name="Overclocked_mech" type="Node2D"]
+script = ExtResource("1_2bxou")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+scale = Vector2(13, 13)
+shape = SubResource("CircleShape2D_obp3y")
+debug_color = Color(0, 1, 0.345098, 0.945098)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_2q7ib")
+animation = &"attack_down"
+autoplay = "walk_down"
+centered = false
+offset = Vector2(-16, -16)
+flip_h = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_5osde")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="DamageCollision" type="CollisionShape2D" parent="DamageArea"]
+scale = Vector2(19, 19)
+shape = SubResource("CircleShape2D_ki6wf")
+debug_color = Color(0.811765, 0.0352941, 0, 0.909804)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.7
+one_shot = true
+
+[node name="SoundTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 3
+offset_left = -27.0
+offset_top = -25.0
+offset_right = 85.0
+offset_bottom = -8.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/table_border = Color(1, 1, 1, 0)
+theme_override_fonts/normal_font = ExtResource("9_2jv1r")
+text = "Bob omb"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -29.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = -14.0
+theme = SubResource("Theme_piv55")
+theme_override_styles/background = SubResource("StyleBoxFlat_ciks5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_o0qkd")
+max_value = 10.0
+fill_mode = 1
+show_percentage = false
