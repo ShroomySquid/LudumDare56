@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://by8cfqoxgjjj8"]
+
+[ext_resource type="Script" path="res://Scripts/Creatures/template_unit.gd" id="1_smbej"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j7fp3"]
+radius = 110.018
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j42ml"]
+radius = 1.0
+
+[node name="TemplateCreature" type="CharacterBody2D"]
+script = ExtResource("1_smbej")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="LineOfSight" type="Area2D" parent="."]
+
+[node name="LineOfSightCollision" type="CollisionShape2D" parent="LineOfSight"]
+shape = SubResource("CircleShape2D_j7fp3")
+
+[node name="CheckTarget" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+scale = Vector2(13, 13)
+shape = SubResource("CircleShape2D_j42ml")
+debug_color = Color(0, 1, 0.345098, 0.945098)

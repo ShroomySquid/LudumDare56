@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmemlf0qfk5rr"]
+[gd_scene load_steps=6 format=3 uid="uid://dmemlf0qfk5rr"]
 
 [ext_resource type="Script" path="res://Scripts/test_mob.gd" id="1_ba77w"]
 [ext_resource type="Texture2D" uid="uid://byf8wh4qw8ufn" path="res://icon.svg" id="1_d5p3m"]
+[ext_resource type="PackedScene" path="res://scenes/shooting.tscn" id="3_myxnc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rggi"]
 radius = 11.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7yoq"]
-radius = 110.018
+radius = 218.037
 
 [node name="TestMob" type="CharacterBody2D"]
 z_index = 1
@@ -17,7 +18,7 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_ba77w")
 
-[node name="TestSPrite" type="Sprite2D" parent="."]
+[node name="DefaultSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_d5p3m")
 
@@ -36,6 +37,19 @@ shape = SubResource("CircleShape2D_s7yoq")
 wait_time = 0.5
 autostart = true
 
+[node name="SpawnSFX" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="."]
+
+[node name="DeathSFX" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Shooting" parent="." instance=ExtResource("3_myxnc")]
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="body_entered" from="LineOfSight" to="." method="_on_line_of_sight_body_entered"]
 [connection signal="body_exited" from="LineOfSight" to="." method="_on_line_of_sight_body_exited"]
 [connection signal="timeout" from="CheckTarget" to="." method="_on_check_target_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

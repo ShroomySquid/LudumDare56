@@ -22,6 +22,8 @@ SignalManager="*res://Scripts/autoload/SignalManager.gd"
 
 [display]
 
+window/size/viewport_width=1024
+window/size/viewport_height=640
 window/stretch/mode="canvas_items"
 
 [input]
@@ -91,6 +93,8 @@ M={
 2d_physics/layer_1="Mob"
 2d_navigation/layer_1="road"
 2d_physics/layer_2="Terrain"
+2d_physics/layer_3="Buildings"
+2d_physics/layer_4="Projectile"
 
 [rendering]
 

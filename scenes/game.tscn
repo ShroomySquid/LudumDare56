@@ -1,14 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cubm8ayprtkdv"]
+[gd_scene load_steps=9 format=3 uid="uid://cubm8ayprtkdv"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_6a6vw"]
 [ext_resource type="PackedScene" uid="uid://bwrhsav1b6hkf" path="res://scenes/settings.tscn" id="2_2jvls"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="2_47ctw"]
-[ext_resource type="PackedScene" path="res://scenes/card_UI.tscn" id="4_okrk5"]
-[ext_resource type="PackedScene" path="res://scenes/single_lane.tscn" id="5_ee3y4"]
+[ext_resource type="AudioStream" uid="uid://kcl3eqe2kdvx" path="res://Sound&Music/Music/ittle mech tower defense soundtrack.mp3" id="2_mecq3"]
+[ext_resource type="PackedScene" uid="uid://bahplrcm8cykh" path="res://scenes/card_UI.tscn" id="4_okrk5"]
+[ext_resource type="PackedScene" uid="uid://dwyof0b6x23yt" path="res://scenes/single_lane.tscn" id="5_1xc44"]
+[ext_resource type="Script" path="res://Scripts/creature_container.gd" id="6_dokwc"]
+[ext_resource type="PackedScene" uid="uid://dwpf3dc6oghfm" path="res://scenes/end_menu.tscn" id="6_sg52i"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_6a6vw")
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mecq3")
+bus = &"Music"
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2(203, 517)
@@ -18,7 +25,7 @@ script = ExtResource("2_47ctw")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CardUI" parent="CanvasLayer" instance=ExtResource("4_okrk5")]
-position = Vector2(1, 65)
+position = Vector2(-1, 150)
 
 [node name="PauseBtn" type="Button" parent="CanvasLayer"]
 offset_right = 53.0
@@ -53,16 +60,32 @@ text = "Resume"
 layout_mode = 2
 text = "Quit"
 
-[node name="Settings" parent="CanvasLayer" instance=ExtResource("2_2jvls")]
-visible = false
-offset_left = 362.0
-offset_top = 276.0
-offset_right = -399.0
-offset_bottom = -185.0
+[node name="LoseBtn" type="Button" parent="CanvasLayer/MenuContainer"]
+layout_mode = 2
+text = "Lose Button"
 
-[node name="SingleLane" parent="." instance=ExtResource("5_ee3y4")]
+[node name="WinBtn" type="Button" parent="CanvasLayer/MenuContainer"]
+layout_mode = 2
+text = "Win Button"
+
+[node name="Settings" parent="CanvasLayer" instance=ExtResource("2_2jvls")]
+offset_left = 201.0
+offset_top = 193.0
+offset_right = -237.0
+offset_bottom = -236.0
+
+[node name="EndMenu" parent="CanvasLayer" instance=ExtResource("6_sg52i")]
+visible = false
+
+[node name="SingleLane" parent="." instance=ExtResource("5_1xc44")]
 
 [node name="CreatureContainer" type="Node2D" parent="."]
+show_behind_parent = true
+z_index = 1
+z_as_relative = false
+script = ExtResource("6_dokwc")
+
+[node name="BuildingContainer" type="Node2D" parent="."]
 show_behind_parent = true
 z_index = 1
 z_as_relative = false
@@ -70,10 +93,15 @@ z_as_relative = false
 [node name="CreatureSpawnTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="ProgramContainer" type="Node2D" parent="."]
+
 [connection signal="card_effect" from="CanvasLayer/CardUI" to="." method="_on_card_ui_card_effect"]
+[connection signal="card_effect" from="CanvasLayer/CardUI" to="CreatureContainer" method="_on_card_ui_card_effect"]
 [connection signal="pressed" from="CanvasLayer/PauseBtn" to="." method="_on_pause_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuContainer/SettingBtn" to="." method="_on_setting_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuContainer/LoseBtn" to="." method="_on_lose_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuContainer/WinBtn" to="." method="_on_win_btn_pressed"]
 [connection signal="exit_settings" from="CanvasLayer/Settings" to="." method="_on_settings_exit_settings"]
 [connection signal="timeout" from="CreatureSpawnTimer" to="." method="_on_creature_spawn_timer_timeout"]

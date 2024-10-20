@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://drdtcbypimoey"]
+[gd_scene load_steps=5 format=3 uid="uid://wpjd1fwlpfsb"]
 
 [ext_resource type="Texture2D" uid="uid://cmpbtkqvuxphg" path="res://Images/card_template.png" id="1_e8xn8"]
 [ext_resource type="Script" path="res://Scripts/card.gd" id="1_f4hih"]
@@ -56,5 +56,15 @@ autowrap_mode = 2
 position = Vector2(1.5, 18)
 shape = SubResource("RectangleShape2D_2mrrf")
 
+[node name="FlipBtn" type="Button" parent="."]
+visible = false
+offset_left = -17.0
+offset_top = -144.0
+offset_right = 19.0
+offset_bottom = -113.0
+theme_override_font_sizes/font_size = 12
+text = "Flip"
+
 [connection signal="mouse_entered" from="MouseHover" to="." method="_on_mouse_hover_mouse_entered"]
 [connection signal="mouse_exited" from="MouseHover" to="." method="_on_mouse_hover_mouse_exited"]
+[connection signal="pressed" from="FlipBtn" to="." method="_on_flip_btn_pressed"]

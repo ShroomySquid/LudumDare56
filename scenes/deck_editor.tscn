@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce85q808k8ke4"]
+
+[ext_resource type="Script" path="res://Scripts/deck_editor.gd" id="1_bkmpt"]
+
+[node name="DeckEditor" type="Node2D"]
+script = ExtResource("1_bkmpt")
+
+[node name="Start" type="Marker2D" parent="."]
+position = Vector2(144, 128)
+
+[node name="CardContainer" type="Node2D" parent="."]

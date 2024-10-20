@@ -5,4 +5,4 @@ signal creature_killed
 
 # Send back signal
 func _on_creature_killed(target: Node2D):
-	emit_signal("creature_killed", target)
+	creature_killed.emit(target)
