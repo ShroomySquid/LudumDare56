@@ -72,32 +72,32 @@ func is_ennemy_in_range():
 func make_path():
 	nav_agent.target_position = target.global_position
 
-# func _on_line_of_sight_body_entered(body):
-# 	if not body.has_method("make_path"):
-# 		return
-# 	if body.is_player_mob != is_player_mob:
-# 		potential_targets.append(body)
+func _on_line_of_sight_body_entered(body):
+	if not body.has_method("make_path"):
+		return
+	if body.is_player_mob != is_player_mob:
+		potential_targets.append(body)
 
-# func _on_line_of_sight_body_exited(body):
-# 	if not body.has_method("make_path"):
-# 		return
-# 	if body.is_player_mob != is_player_mob:
-# 		potential_targets.erase(body)
+func _on_line_of_sight_body_exited(body):
+	if not body.has_method("make_path"):
+		return
+	if body.is_player_mob != is_player_mob:
+		potential_targets.erase(body)
 
-# func _on_check_target_timeout():
-# 	if potential_targets.size() > 0:
-# 		target = potential_targets[0]
-# 	else:
-# 		target = ennemy_base
-# 	make_path()
+func _on_check_target_timeout():
+	if potential_targets.size() > 0:
+		target = potential_targets[0]
+	else:
+		target = ennemy_base
+	make_path()
 
-# func _on_attack_timer_timeout():
-# 	if not in_attack_range or not is_instance_valid(target) or not target.has_method("make_path"):
-# 		return
-# 	if attack_range <= 25:
-# 		target.take_hit(damage)
-# 	else:
-# 		shoot.shoot(damage, target, random_sprite)
+func _on_attack_timer_timeout():
+	if not in_attack_range or not is_instance_valid(target) or not target.has_method("make_path"):
+		return
+	if attack_range <= 25:
+		target.take_hit(damage)
+	else:
+		shoot.shoot(damage, target, random_sprite)
 
 func take_hit(damage_taken : int):
 	health -= damage_taken
