@@ -3,7 +3,8 @@ extends Node2D
 @onready var is_paused := false
 @onready var settings_on := false
 
-@onready var mob = preload("res://scenes/Creatures/test_mob.tscn")
+#@onready var mob = preload("res://scenes/Creatures/test_mob.tscn")
+@onready var unit = preload("res://scenes/Creatures/unit.tscn")
 @onready var building = preload("res://scenes/Building/test_building.tscn")
 @onready var microwave_beam = preload("res://scenes/Spells/microwave_beam.tscn")
 
@@ -75,7 +76,7 @@ func _on_creature_spawn_timer_timeout():
 		_spawn_building(false)
 	
 func _spawn_creature(_is_player_mob, attack_range):
-	var new_mob = mob.instantiate()
+	var new_mob = unit.instantiate()
 	creature_container.add_child(new_mob)
 	new_mob.attack_range = attack_range
 	new_mob.id = mob_id

@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var spawn_sound : AudioStream
 @export var death_sound : AudioStream
 @export var attack_sound : AudioStream
+@export var targetable := Targetable.CREATURE
 
 @onready var target: Node2D
 @onready var ennemy_base: Node2D
@@ -19,6 +20,12 @@ extends CharacterBody2D
 var potential_targets = []
 var id : int
 @onready var sprite = $AnimatedSprite2D
+
+enum Targetable {
+	CREATURE,
+	BUILDING,
+	OTHER,
+}
 
 #signal attack
 
@@ -73,13 +80,13 @@ func make_path():
 	nav_agent.target_position = target.global_position
 
 func _on_line_of_sight_body_entered(body):
-	if not body.has_method("make_path"):
+	if not targetable in body | body.targetable == 2:
 		return
 	if body.is_player_mob != is_player_mob:
 		potential_targets.append(body)
 
 func _on_line_of_sight_body_exited(body):
-	if not body.has_method("make_path"):
+	if not targetable in body | body.targetable == 2:
 		return
 	if body.is_player_mob != is_player_mob:
 		potential_targets.erase(body)
