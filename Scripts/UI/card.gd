@@ -14,10 +14,15 @@ var mouse_hover = false
 var hand_pos = 0
 
 func _ready():
+	var image_texture = load("res://Images/TestImages/3web.png") #testimage
+	image.texture = image_texture
 	pass
 
 func set_values(_card):
 	card = _card
+	
+	
+	
 	cost_lbl.text = str(_card.cost)
 	description_lbl.text = _card.description
 	name_lbl.text = _card.title
@@ -47,9 +52,11 @@ func _process(_delta):
 		card_activated.emit(hand_pos)
 
 func _on_mouse_hover_mouse_entered():
+	# TODO: Change to account for card overlap
 	mouse_hover = true
 
 func _on_mouse_hover_mouse_exited():
+	# TODO: Change to account for card overlap
 	mouse_hover = false
 
 func _on_flip_btn_pressed():

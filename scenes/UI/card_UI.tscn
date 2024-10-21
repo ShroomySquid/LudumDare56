@@ -9,7 +9,7 @@
 script = ExtResource("1_kdiqq")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(218, 413)
+position = Vector2(350, 413)
 
 [node name="CardHand" type="Node2D" parent="."]
 
@@ -17,6 +17,7 @@ position = Vector2(218, 413)
 position = Vector2(71, 353)
 
 [node name="DiscardPile" parent="." instance=ExtResource("3_kw6kb")]
+visible = false
 position = Vector2(71, 435)
 
 [node name="Mana" parent="." instance=ExtResource("4_66u4a")]

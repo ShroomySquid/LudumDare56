@@ -23,6 +23,8 @@ extends Node2D
 
 @onready var starter_deck = []
 
+const card_distance = 100
+
 signal card_effect
 
 func _ready():
@@ -44,7 +46,7 @@ func create_card():
 	hand.add_child(new_card)
 	new_card.position = spawn_point.position
 	new_card.position.x += position_decay
-	position_decay += 175
+	position_decay += card_distance #Set card distance
 	new_card.hand_pos = hand_pos
 	hand_pos += 1
 	render_card(new_card, false)
