@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c88pvnreivhm0"]
+[gd_scene load_steps=4 format=3 uid="uid://c88pvnreivhm0"]
 
 [ext_resource type="Script" path="res://Scripts/Map/checkpoint.gd" id="1_u5130"]
-[ext_resource type="Texture2D" uid="uid://dae44v8vnxdu2" path="res://Images/circle.png" id="2_3lnqi"]
+[ext_resource type="Texture2D" uid="uid://deprr1keimox" path="res://Images/Sprites/Terrain_features/Checkpoint/checkpoint_blue.png" id="2_6h54i"]
+[ext_resource type="Texture2D" uid="uid://bs0w5aqnw7u8" path="res://Images/Sprites/Terrain_features/Checkpoint/checkpoint_red.png" id="3_wqh1i"]
 
 [node name="Checkpoint" type="Marker2D"]
 script = ExtResource("1_u5130")
@@ -14,20 +15,19 @@ polygon = PackedVector2Array(-60, 0, 0, -30, 60, 0, 0, 30)
 
 [node name="LightPlayer" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 1, 1)
-position = Vector2(-1, 0)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_3lnqi")
+position = Vector2(7.7, -8)
+scale = Vector2(0.321875, 0.25)
+texture = ExtResource("2_6h54i")
 
 [node name="LightAI" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(-1, 0)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_3lnqi")
+texture = ExtResource("3_wqh1i")
 
 [node name="LightNeutral" type="Sprite2D" parent="."]
 position = Vector2(-1, 0)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_3lnqi")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
