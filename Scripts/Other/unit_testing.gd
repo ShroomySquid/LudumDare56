@@ -7,7 +7,7 @@ extends Node2D
 func _ready() -> void:
 	var new_unit = unit.instantiate()
 	add_child(new_unit)
-	new_unit.load("Fire_fists")
+	new_unit.s_load("Fire_fists")
 	new_unit.position = Vector2(100, 100)
 	
 

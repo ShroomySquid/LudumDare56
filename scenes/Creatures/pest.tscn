@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://duh7cau5ov6xa"]
+[gd_scene load_steps=6 format=3 uid="uid://dcu6onlbtjah6"]
 
-[ext_resource type="Script" path="res://Scripts/Creatures/unit.gd" id="1_85bg6"]
-[ext_resource type="PackedScene" uid="uid://byspbid24ryvm" path="res://scenes/Other/shooting.tscn" id="2_e8au4"]
-[ext_resource type="Texture2D" uid="uid://byf8wh4qw8ufn" path="res://icon.svg" id="3_6bqru"]
+[ext_resource type="Script" path="res://Scripts/Creatures/pest.gd" id="1_rg26w"]
+[ext_resource type="PackedScene" uid="uid://byspbid24ryvm" path="res://scenes/Other/shooting.tscn" id="2_7kqd1"]
+[ext_resource type="Texture2D" uid="uid://byf8wh4qw8ufn" path="res://icon.svg" id="3_8ptbf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rggi"]
 radius = 11.0
@@ -10,13 +10,13 @@ radius = 11.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7yoq"]
 radius = 218.037
 
-[node name="Unit" type="CharacterBody2D"]
+[node name="Pest" type="CharacterBody2D"]
 z_index = 1
 position = Vector2(-1, 0)
 collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_85bg6")
+script = ExtResource("1_rg26w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
@@ -41,15 +41,16 @@ autostart = true
 
 [node name="DeathSFX" type="AudioStreamPlayer2D" parent="."]
 
-[node name="Shooting" parent="." instance=ExtResource("2_e8au4")]
+[node name="Shooting" parent="." instance=ExtResource("2_7kqd1")]
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.5
+autostart = true
 
 [node name="DefaultSprite" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_6bqru")
+texture = ExtResource("3_8ptbf")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="LineOfSight" to="." method="_on_line_of_sight_body_entered"]
