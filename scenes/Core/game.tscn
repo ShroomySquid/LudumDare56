@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cubm8ayprtkdv"]
 
 [ext_resource type="Script" path="res://Scripts/Core/game.gd" id="1_w4gqr"]
-[ext_resource type="AudioStream" uid="uid://8rcgvr845uwl" path="res://Sound&Music/Music/ittle mech tower defense soundtrack.mp3" id="2_fqff2"]
+[ext_resource type="AudioStream" uid="uid://bx5e5xmkrsnhl" path="res://Sound&Music/Music/ittle mech tower defense soundtrack.mp3" id="2_fqff2"]
 [ext_resource type="Script" path="res://Scripts/Core/player_camera.gd" id="3_n2y05"]
 [ext_resource type="PackedScene" uid="uid://bahplrcm8cykh" path="res://scenes/UI/card_UI.tscn" id="4_co65c"]
 [ext_resource type="PackedScene" uid="uid://bwrhsav1b6hkf" path="res://scenes/Core/settings.tscn" id="5_r1iy1"]
